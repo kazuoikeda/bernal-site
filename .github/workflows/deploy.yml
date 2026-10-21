@@ -22,6 +22,8 @@ jobs:
           protocol: ftps
           local-dir: ./
           server-dir: ./
+          timeout: 120000
+          log-level: verbose
           exclude: |
             **/.git*
             **/.git*/**
