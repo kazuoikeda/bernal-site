@@ -117,7 +117,12 @@
     </p>
 
     <h2>9. About cookies</h2>
-    <p>The Service does not itself use cookies or any similar device identifier, and none are sent.</p>
+    <p>
+      <strong>The Service (search widget):</strong> The Service does not itself use cookies or any similar device identifier, and none are sent.
+    </p>
+    <p>
+      <strong>This website (bernal-inc.com):</strong> Our corporate website uses Google Analytics, an analytics tool provided by Google, to understand how the site is used and to help us improve it. Google Analytics collects information via cookies, but this does not include information capable of identifying you by name. This use of cookies is enabled only if you consent via the banner shown when you visit the site; if you do not consent, no measurement takes place. Information collected is managed by Google in accordance with Google's own Privacy Policy. For details of Google Analytics' terms and privacy practices, please see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can also opt out of measurement using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.
+    </p>
 
     <h2>10. Security measures</h2>
     <p>
@@ -152,5 +157,57 @@
   </div>
 </footer>
 
+<div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
+  <div class="wrap">
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA_ID = 'G-4TDLBKZMTG';
+  function loadGA(){
+    if (window.__bernalGALoaded) return;
+    window.__bernalGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  function showBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'block';
+  }
+  function hideBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'none';
+  }
+  var consent;
+  try { consent = localStorage.getItem('bernal_cookie_consent'); } catch(e) { consent = null; }
+  if (consent === 'granted') {
+    loadGA();
+  } else if (consent !== 'denied') {
+    showBanner();
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'granted'); } catch(e){}
+    loadGA();
+    hideBanner();
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'denied'); } catch(e){}
+    hideBanner();
+  });
+})();
+</script>
 </body>
 </html>

@@ -110,5 +110,57 @@
   </div>
 </footer>
 
+<div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
+  <div class="wrap">
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA_ID = 'G-4TDLBKZMTG';
+  function loadGA(){
+    if (window.__bernalGALoaded) return;
+    window.__bernalGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  function showBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'block';
+  }
+  function hideBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'none';
+  }
+  var consent;
+  try { consent = localStorage.getItem('bernal_cookie_consent'); } catch(e) { consent = null; }
+  if (consent === 'granted') {
+    loadGA();
+  } else if (consent !== 'denied') {
+    showBanner();
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'granted'); } catch(e){}
+    loadGA();
+    hideBanner();
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'denied'); } catch(e){}
+    hideBanner();
+  });
+})();
+</script>
 </body>
 </html>
