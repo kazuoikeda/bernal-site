@@ -31,7 +31,6 @@ if ($name === '' || $email === '' || $message === '' || !filter_var($email, FILT
     exit;
 }
 
-mb_language('Japanese');
 mb_internal_encoding('UTF-8');
 
 $to = 'kazuoikeda0820@gmail.com,k.keda@bernal-inc.com';
@@ -52,11 +51,17 @@ if ($lang === 'en') {
     $body .= "お問い合わせ内容:\n{$message}\n";
 }
 
+$encodedSubject = mb_encode_mimeheader($subject, 'UTF-8', 'B', "\r\n");
+
 $headers = "From: no-reply@bernal-inc.com\r\n";
 $headers .= "Reply-To: {$email}\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: base64";
 
-$sent = mb_send_mail($to, $subject, $body, $headers);
+$encodedBody = chunk_split(base64_encode($body));
+
+$sent = mail($to, $encodedSubject, $encodedBody, $headers);
 
 if ($sent) {
     header('Location: ' . $thanksPage);
