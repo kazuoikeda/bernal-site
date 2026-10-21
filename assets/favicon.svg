@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<style>
+  .mark-bg { fill: #16301F; }
+  @media (prefers-color-scheme: dark) {
+    .mark-bg { fill: #FBFBF9; }
+  }
+</style>
+<circle class="mark-bg" cx="24" cy="32" r="18"/>
+<circle class="mark-bg" cx="40" cy="32" r="18"/>
+<path d="M32 15.8755A18 18 0 0 0 32 48.1245A18 18 0 0 0 32 15.8755Z" fill="#3DBF5C"/>
+</svg>
