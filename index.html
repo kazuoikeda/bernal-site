@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+(function(){
+  try {
+    var pref = localStorage.getItem('bernal_lang');
+    if (pref === 'en') { location.replace('en/index.html'); return; }
+    if (pref === 'ja') { /* stay on this page */ }
+    else {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('ja') !== 0) { location.replace('en/index.html'); }
+    }
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal（β）| アーカイブ資産を、収益に変える検索インテリジェンス</title>
@@ -33,7 +46,7 @@
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="terms.html">利用規約</a>
       <a href="contact.html">お問い合わせ</a>
-      <a href="en/index.html">EN</a>
+      <a href="en/index.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
     </nav>
   </div>
 </header>
