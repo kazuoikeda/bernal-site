@@ -41,17 +41,47 @@
   <div class="wrap">
     <h1>Contact</h1>
     <p class="lede">
-      For enquiries about deploying our search intelligence, "Bernal", or about the Company more generally, please get in touch using the email address below. We also welcome privacy-related enquiries from media and publishers considering deployment, and from readers currently using the Service.
+      For enquiries about deploying our search intelligence, "Bernal", or about the Company more generally, please get in touch using the form below. We also welcome privacy-related enquiries from media and publishers considering deployment, and from readers currently using the Service.
     </p>
 
-    <div class="contact-box">
-      <div class="meta">Contact</div>
-      <span class="email">k.keda@bernal-inc.com</span>
-      <p class="meta" style="margin-top:10px;">
-        Bernal, Inc. — Founder, Kazuo Ikeda<br>
-        Hours: <span class="placeholder">[e.g. weekdays 10:00–18:00]</span>, excluding weekends, public holidays and other non-business days<br>
-        We aim to reply within <span class="placeholder">[X business days]</span> as a general guide.
-      </p>
+    <div class="contact-form-wrap">
+      <div id="form-error" class="form-notice error" style="display:none;">
+        Something went wrong while sending your message. Please check your details and try again.
+      </div>
+
+      <p class="form-heading">Contact Us</p>
+
+      <form class="contact-form" action="../send.php" method="POST">
+        <input type="hidden" name="lang" value="en">
+        <div class="hp-field" aria-hidden="true">
+          <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="field">
+          <label for="name" class="visually-hidden">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Full Name *" required>
+        </div>
+        <div class="field">
+          <label for="company" class="visually-hidden">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company (optional)">
+        </div>
+        <div class="field">
+          <label for="email" class="visually-hidden">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email *" required>
+        </div>
+        <div class="field">
+          <label for="message" class="visually-hidden">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Message *" required></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="submit-btn">Send</button>
+        </div>
+      </form>
+
+      <script>
+        if (location.search.indexOf('error=1') !== -1) {
+          document.getElementById('form-error').style.display = 'block';
+        }
+      </script>
     </div>
 
     <h2>For businesses considering deployment</h2>
