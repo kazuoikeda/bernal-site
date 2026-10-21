@@ -48,6 +48,8 @@ header.site .wrap {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .brand img, .brand svg {
