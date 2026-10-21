@@ -52,6 +52,40 @@
       </p>
     </div>
 
+    <div id="form-error" class="form-notice error" style="display:none;">
+      送信に失敗しました。入力内容をご確認のうえ、再度お試しください。
+    </div>
+
+    <h2>お問い合わせフォーム</h2>
+    <form class="contact-form" action="send.php" method="POST">
+      <div class="hp-field" aria-hidden="true">
+        <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <div class="field">
+        <label for="name">お名前<span class="required">必須</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="company">会社名</label>
+        <input type="text" id="company" name="company">
+      </div>
+      <div class="field">
+        <label for="email">メールアドレス<span class="required">必須</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">送信する</button>
+    </form>
+
+    <script>
+      if (location.search.indexOf('error=1') !== -1) {
+        document.getElementById('form-error').style.display = 'block';
+      }
+    </script>
+
     <h2>導入をご検討の企業様へ</h2>
     <ul>
       <li>既存のアクセスログのみで実施できる簡易診断から承っております。新規計測やタグ改修は不要です。</li>
