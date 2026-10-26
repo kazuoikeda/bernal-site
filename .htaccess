@@ -6,3 +6,10 @@
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 </IfModule>
+
+# Old URLs: /en/... moved to the site root
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^en/?$ / [R=301,L]
+  RewriteRule ^en/(.+)$ /$1 [R=301,L]
+</IfModule>

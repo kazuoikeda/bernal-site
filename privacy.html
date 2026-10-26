@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-GB">
 <head>
+<script>
+(function(){
+  try {
+    var pref = localStorage.getItem('bernal_lang');
+    var dest = 'jp/privacy.html' + location.search + location.hash;
+    if (pref === 'ja') { location.replace(dest); return; }
+    if (pref !== 'en') {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('ja') === 0) { location.replace(dest); }
+    }
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
@@ -28,120 +41,120 @@
       </g></svg>
     </a>
     <nav class="site">
-      <a href="index.html">ホーム</a>
-      <a href="privacy.html" class="active">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html">お問い合わせ</a>
-      <a href="en/privacy.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
+      <a href="index.html">Home</a>
+      <a href="privacy.html" class="active">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
+      <a href="jp/privacy.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Bernalにおける利用者情報の取扱いポリシー</h1>
-    <p class="meta">最終更新日：2026年10月</p>
+    <h1>Policy on the Handling of User Information in the Bernal Search Service</h1>
+    <p class="meta">Last updated: October 2026</p>
 
     <p>
-      Bernal, Inc.（以下「当社」）は、当社が提供する「Bernal」（以下「本サービス」）における利用者情報の取り扱いについて、以下のとおりBernalにおける利用者情報の取扱いポリシー（以下「本ポリシー」）を定めます。
+      Bernal, Inc. (the "Company") sets out this Policy on the Handling of User Information in the Bernal Search Service (this "Policy"), describing how we handle user information in connection with "Bernal" (the "Service"), the search intelligence we provide.
     </p>
 
-    <h2>1. 事業者情報</h2>
+    <h2>1. Company information</h2>
     <table class="policy">
-      <tr><th>名称</th><td>Bernal, Inc.</td></tr>
-      <tr><th>代表者</th><td>池田 和生</td></tr>
-      <tr><th>連絡先</th><td><a href="contact.html">お問い合わせページ</a>をご確認ください</td></tr>
+      <tr><th>Name</th><td>Bernal, Inc.</td></tr>
+      <tr><th>Representative</th><td>Kazuo Ikeda</td></tr>
+      <tr><th>Contact</th><td>Please see our <a href="contact.html">Contact page</a></td></tr>
     </table>
 
-    <h2>2. 本サービスの概要</h2>
+    <h2>2. Overview of the Service</h2>
     <p>
-      本サービスは、パブリッシャー様（導入企業）のウェブサイトに埋め込み型のタグで設置する検索エンジンです。本サービスは導入企業の委託を受けて当社が運営しており、本サービスの利用に伴い発生する情報は、原則として当社のシステム内で自己完結的に処理されます（当社から第三者への再提供・再委託は行っておりません）。
+      The Service is a search engine installed via an embedded tag on a publisher's (client's) website. We operate the Service on the client's instruction, and information arising from its use is, as a rule, processed self-containedly within our own systems (we do not re-share or sub-contract it to any third party).
     </p>
 
-    <h2>3. 取得する情報</h2>
-    <p>本サービスのご利用にあたり、当社が取得する情報は以下のとおりです。</p>
+    <h2>3. Information we collect</h2>
+    <p>In providing the Service, the information we collect is as follows.</p>
     <table class="policy">
-      <tr><th>検索ワード</th><td>利用者が本サービスの検索窓に入力した語句</td></tr>
-      <tr><th>匿名ID</th><td>ブラウザのlocalStorageに保存するランダムな識別子（氏名・会員情報等、個人を特定し得る情報は含みません）</td></tr>
-      <tr><th>セッションID</th><td>ブラウザのsessionStorageに保存するランダムな識別子（タブを閉じると消去されます）</td></tr>
-      <tr><th>ページURL</th><td>検索窓を設置しているページのURL</td></tr>
-      <tr><th>利用状況のイベント情報</th><td>検索の実行、検索結果の表示件数、クリックされた記事と表示順位、関連記事の表示・クリック、発生日時</td></tr>
+      <tr><th>Search terms</th><td>Words or phrases a user enters into the Service's search box</td></tr>
+      <tr><th>Anonymous ID</th><td>A randomly generated identifier stored in the browser's localStorage (contains no name, membership details or other identifying information)</td></tr>
+      <tr><th>Session ID</th><td>A randomly generated identifier stored in the browser's sessionStorage (cleared when the tab is closed)</td></tr>
+      <tr><th>Page URL</th><td>The URL of the page on which the search box is installed</td></tr>
+      <tr><th>Usage event data</th><td>Search executions, the number of results shown, articles clicked and their position, display of and clicks on related articles, and timestamps</td></tr>
     </table>
     <p>
-      IPアドレス・ブラウザ情報（User-Agent）は、通信の性質上、当社サーバーに到達しますが、データベースへの保存は行っておりません。
+      IP address and browser information (User-Agent) reach our servers as an inherent feature of how data is transmitted over the internet, but are not stored in our database.
     </p>
     <p>
-      上記の匿名ID・セッションIDはいずれもランダムに生成される識別子であり、氏名・メールアドレス等、個人を特定し得る他の情報と紐付けて保存することはありません。
+      The anonymous ID and session ID above are both randomly generated identifiers. We do not link them to a name, email address or any other information capable of identifying an individual.
     </p>
     <p>
-      なお、本サービスのシステムは、導入企業様の会員IDと検索ログを紐付けて記録する機能を備えていますが、現状、当社ではこの機能を利用した保存は行っておりません。将来、導入企業様の実装により本機能が有効化された場合には、この限りではなく、該当する導入企業様ごとに個別にご案内いたします。
+      Our system is technically capable of linking search logs to a client's own member IDs, but we do not currently use this capability to store data in that way. Should a client implement this in future, this would no longer apply, and we would notify the client concerned individually.
     </p>
 
-    <h2>4. 取得方法</h2>
-    <p>利用者が本サービスの検索窓を操作した際に、本サービスのプログラム（タグ）を通じて、ブラウザ上で自動的に取得されます。</p>
+    <h2>4. How we collect it</h2>
+    <p>Information is collected automatically, in the user's browser, through the Service's programme (tag), when a user interacts with the search box.</p>
 
-    <h2>5. 利用目的</h2>
+    <h2>5. Purpose of use</h2>
     <ol>
-      <li>本サービス（検索機能）を提供するため</li>
-      <li>検索精度の改善を行うため</li>
-      <li>導入企業様向けの利用状況レポート（人気キーワード・クリック率等）を作成するため</li>
+      <li>To provide the Service (search functionality)</li>
+      <li>To improve search accuracy</li>
+      <li>To produce usage reports for clients (such as popular keywords and click-through rates)</li>
     </ol>
-    <p>上記の目的を超えた利用は行いません。</p>
+    <p>We do not use this information beyond the purposes above.</p>
 
-    <h2>6. 外部への送信について（電気通信事業法 第27条の12）</h2>
+    <h2>6. External transmission (Article 27-12 of the Telecommunications Business Act)</h2>
     <p>
-      本サービスのタグが設置されたページを利用者が閲覧・操作すると、以下の情報が当社のサーバー（送信先）に送信されます。
+      When a user views or interacts with a page on which the Service's tag is installed, the following information is sent to our servers (the recipient).
     </p>
     <table class="policy">
-      <tr><th>送信される情報の内容</th><td>検索ワード、匿名ID、セッションID、ページURL、利用状況のイベント情報（検索の実行・表示件数・クリック・表示順位・発生日時等）</td></tr>
-      <tr><th>送信先の名称</th><td>Bernal, Inc.</td></tr>
-      <tr><th>送信の目的</th><td>本サービス（検索機能）の提供、検索精度の改善、導入企業様向け利用状況レポートの作成</td></tr>
+      <tr><th>Information transmitted</th><td>Search terms, anonymous ID, session ID, page URL, usage event data (search executions, number of results shown, clicks, ranking, timestamps, etc.)</td></tr>
+      <tr><th>Name of recipient</th><td>Bernal, Inc.</td></tr>
+      <tr><th>Purpose of transmission</th><td>To provide the Service (search functionality), to improve search accuracy, and to produce usage reports for clients</td></tr>
     </table>
     <p>
-      送信された情報は、第3項に記載の範囲を超えて他の情報と紐付けることはありません。
+      We do not link the information transmitted to anything beyond what is described in Section 3.
     </p>
 
-    <h2>7. 保存期間</h2>
+    <h2>7. Retention period</h2>
     <p>
-      生データ：現時点では保存期間を定めておらず、削除処理は行っておりません。<br>
-      集計データ：集計専用のデータとして別途保存することはせず、管理画面での表示の都度、生データから集計しています。
+      Raw data: we have not currently set a retention period, and do not carry out deletion.<br>
+      Aggregated data: we do not store aggregated data separately; it is calculated afresh from the raw data each time it is shown in our dashboard.
     </p>
-    <p class="placeholder">【保存期間は今後定め次第、本ポリシーを改定のうえ追記いたします】</p>
+    <p class="placeholder">[A retention period will be set in due course, and this Policy updated accordingly.]</p>
 
-    <h2>8. 第三者提供</h2>
+    <h2>8. Disclosure to third parties</h2>
     <p>
-      当社は、法令に基づく場合を除き、取得した情報を第三者に提供することはありません。また、本サービスの運営において第三者への再委託（サブプロセッサーの利用）は行っておりません。
+      Except where required by law, we do not disclose the information we collect to any third party. Nor do we sub-contract any part of the Service's operation (we use no sub-processors).
     </p>
     <p>
-      なお、本サービスを提供するシステムの構築・保守に関して外部の業務委託先を利用していますが、10. 安全管理措置の「技術的安全管理措置」に記載の措置を講じています。
-    </p>
-
-    <h2>9. Cookie等について</h2>
-    <p>
-      <strong>本サービス（検索ウィジェット）について：</strong>本サービスはCookieを使用しておらず、送信も行っておりません。
-    </p>
-    <p>
-      <strong>本ウェブサイト（bernal-inc.com）について：</strong>当社のコーポレートサイトでは、サイトの利用状況を把握し、改善に役立てることを目的として、Google社が提供するアクセス解析ツール「Googleアナリティクス（Google Analytics）」を使用しています。Googleアナリティクスは、Cookieを利用して通信情報を収集しますが、氏名等の個人を特定できる情報は含まれません。このCookieの利用は、サイトご訪問時に表示される同意バナーで同意いただいた場合にのみ有効になり、同意いただけない場合は計測を行いません。収集された情報は、Google社のプライバシーポリシーに基づき、Google社によって管理されます。Googleアナリティクスの規約・プライバシーポリシーの詳細は、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google社のプライバシーポリシー</a>をご確認ください。また、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Googleアナリティクス オプトアウト アドオン</a>を利用することで、計測を無効化することもできます。
+      We do use an external vendor for the development and maintenance of the systems behind the Service; the safeguards covering that arrangement are set out in Section 10, under "Technical safeguards."
     </p>
 
-    <h2>10. 安全管理措置</h2>
+    <h2>9. About cookies</h2>
     <p>
-      当社は、取り扱う情報の漏えい、滅失またはき損の防止その他の安全管理のため、以下の措置を講じています。
+      <strong>The Service (search widget):</strong> The Service does not itself use cookies or any similar device identifier, and none are sent.
+    </p>
+    <p>
+      <strong>This website (bernal-inc.com):</strong> Our corporate website uses Google Analytics, an analytics tool provided by Google, to understand how the site is used and to help us improve it. Google Analytics collects information via cookies, but this does not include information capable of identifying you by name. This use of cookies is enabled only if you consent via the banner shown when you visit the site; if you do not consent, no measurement takes place. Information collected is managed by Google in accordance with Google's own Privacy Policy. For details of Google Analytics' terms and privacy practices, please see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can also opt out of measurement using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.
+    </p>
+
+    <h2>10. Security measures</h2>
+    <p>
+      To prevent the leakage, loss or damage of the information we handle, and to maintain its security more generally, we take the following measures.
     </p>
     <table class="policy">
-      <tr><th>組織的安全管理措置</th><td>個人データの取扱いに関する方針（本ポリシー）を定めるとともに、情報漏えい等の事案が発生し、又は発生のおそれがある場合の報告・連絡体制をあらかじめ整備しています。</td></tr>
-      <tr><th>人的安全管理措置</th><td>データへのアクセスは、業務上必要な範囲の者に限定しています。当社の体制拡大に伴いアクセス可能な者を追加する場合には、秘密保持に関する合意や、データの取扱いに関する教育を行った上で範囲を限定します。</td></tr>
-      <tr><th>物理的安全管理措置</th><td>本サービスに関するデータは、国内のクラウド事業者が提供するデータセンターにおいて管理されており、当社が利用する作業端末についても、第三者による不正な閲覧を防止するための管理を行っています。</td></tr>
-      <tr><th>技術的安全管理措置</th><td>データは暗号化した上で保存するとともに、通信の暗号化、ID・パスワード等によるアクセス制御、不正アクセスを防止するための対策を実施しています。システムの構築・保守を外部委託する場合は、委託先との間で秘密保持及び目的外利用の禁止を定めた契約を締結し、委託先が本番環境のデータに直接アクセスできない範囲で業務を行わせています。</td></tr>
+      <tr><th>Organisational safeguards</th><td>We have established a policy for handling data (this Policy), and have put in place in advance a reporting and escalation process for when a data breach occurs or is suspected.</td></tr>
+      <tr><th>Personnel safeguards</th><td>Access to data is limited to those who need it for their work. As our team grows, any expansion of who may access data happens only after we have agreed confidentiality undertakings with, and provided data-handling training to, the individuals concerned.</td></tr>
+      <tr><th>Physical safeguards</th><td>Data relating to the Service is managed in data centres operated by a domestic (Japanese) cloud provider, and we also control access to the work devices we use, to prevent unauthorised viewing by third parties.</td></tr>
+      <tr><th>Technical safeguards</th><td>Data is encrypted both at rest and in transit, and we apply access controls such as IDs and passwords, together with measures to prevent unauthorised access. Where we sub-contract the development or maintenance of our systems, we enter into an agreement with the vendor imposing confidentiality obligations and prohibiting use beyond the agreed purpose, and we structure the work so the vendor has no direct access to production data.</td></tr>
     </table>
 
-    <h2>11. 本ポリシーの変更</h2>
+    <h2>11. Changes to this Policy</h2>
     <p>
-      本ポリシーの内容は、法令の変更その他の事情に応じて、予告なく変更される場合があります。変更後の内容は、本ページに掲載した時点から効力を生じます。
+      This Policy may be changed without notice, to reflect changes in the law or other circumstances. Any change takes effect from the moment it is published on this page.
     </p>
 
-    <h2>12. お問い合わせ窓口</h2>
-    <p>本ポリシーに関するお問い合わせは、<a href="contact.html">お問い合わせページ</a>よりご連絡ください。</p>
+    <h2>12. Enquiries</h2>
+    <p>For enquiries about this Policy, please contact us via our <a href="contact.html">Contact page</a>.</p>
 
   </div>
 </main>
@@ -150,19 +163,19 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 
 <div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
   <div class="wrap">
-    <p>サイトの利用状況を把握し、改善に役立てるため、Google Analyticsを使用しています。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
     <div class="cookie-actions">
-      <button type="button" class="cookie-decline" id="cookie-decline">同意しない</button>
-      <button type="button" class="cookie-accept" id="cookie-accept">同意する</button>
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
     </div>
   </div>
 </div>

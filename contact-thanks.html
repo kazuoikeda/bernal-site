@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-GB">
 <head>
+<script>
+(function(){
+  try {
+    var pref = localStorage.getItem('bernal_lang');
+    var dest = 'jp/contact-thanks.html' + location.search + location.hash;
+    if (pref === 'ja') { location.replace(dest); return; }
+    if (pref !== 'en') {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('ja') === 0) { location.replace(dest); }
+    }
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
@@ -28,22 +41,22 @@
       </g></svg>
     </a>
     <nav class="site">
-      <a href="index.html">ホーム</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html" class="active">お問い合わせ</a>
-      <a href="en/contact.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="jp/contact.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>お問い合わせありがとうございます</h1>
+    <h1>Thank you for contacting us</h1>
     <p class="lede">
-      お問い合わせを受け付けました。内容を確認のうえ、通常3営業日以内を目安に担当者よりご連絡いたします。
+      Your message has been received. A member of our team will usually be in touch within 3 business days.
     </p>
-    <p><a href="index.html">トップページへ戻る</a></p>
+    <p><a href="index.html">Back to homepage</a></p>
   </div>
 </main>
 
@@ -51,19 +64,19 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 
 <div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
   <div class="wrap">
-    <p>サイトの利用状況を把握し、改善に役立てるため、Google Analyticsを使用しています。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
     <div class="cookie-actions">
-      <button type="button" class="cookie-decline" id="cookie-decline">同意しない</button>
-      <button type="button" class="cookie-accept" id="cookie-accept">同意する</button>
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
     </div>
   </div>
 </div>

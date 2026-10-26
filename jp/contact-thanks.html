@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,75 +28,22 @@
       </g></svg>
     </a>
     <nav class="site">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="../contact.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="contact.html" class="active">お問い合わせ</a>
+      <a href="../contact.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Contact</h1>
+    <h1>お問い合わせありがとうございます</h1>
     <p class="lede">
-      For enquiries about deploying our search intelligence, "Bernal", or about the Company more generally, please get in touch using the form below. We also welcome privacy-related enquiries from media and publishers considering deployment, and from readers currently using the Service.
+      お問い合わせを受け付けました。内容を確認のうえ、通常3営業日以内を目安に担当者よりご連絡いたします。
     </p>
-
-    <div class="contact-form-wrap">
-      <div id="form-error" class="form-notice error" style="display:none;">
-        Something went wrong while sending your message. Please check your details and try again.
-      </div>
-
-      <p class="form-heading">Contact Us</p>
-
-      <form class="contact-form" action="../send.php" method="POST">
-        <input type="hidden" name="lang" value="en">
-        <div class="hp-field" aria-hidden="true">
-          <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-        </div>
-        <div class="field">
-          <label for="name" class="visually-hidden">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Full Name *" required>
-        </div>
-        <div class="field">
-          <label for="company" class="visually-hidden">Company</label>
-          <input type="text" id="company" name="company" placeholder="Company (optional)">
-        </div>
-        <div class="field">
-          <label for="email" class="visually-hidden">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email *" required>
-        </div>
-        <div class="field">
-          <label for="message" class="visually-hidden">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Message *" required></textarea>
-        </div>
-        <div class="submit-row">
-          <button type="submit" class="submit-btn">Send</button>
-        </div>
-      </form>
-
-      <script>
-        if (location.search.indexOf('error=1') !== -1) {
-          document.getElementById('form-error').style.display = 'block';
-        }
-      </script>
-    </div>
-
-    <h2>For businesses considering deployment</h2>
-    <ul>
-      <li>We offer a simple diagnostic based solely on your existing access logs — no new measurement set-up or tag changes required.</li>
-      <li>A 15-minute online consultation lets us tailor a proposal to your situation.</li>
-    </ul>
-
-    <h2>Before you contact us</h2>
-    <ul>
-      <li>For questions about our Privacy Policy, please also see our <a href="privacy.html">Privacy Policy</a>.</li>
-      <li>If you use the Service via a company that has deployed it, checking with that company's own contact point first may get you a quicker answer.</li>
-      <li>We may ask you to verify your identity if you wish to request disclosure of personal data or similar.</li>
-    </ul>
-
+    <p><a href="index.html">トップページへ戻る</a></p>
   </div>
 </main>
 
@@ -104,19 +51,19 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contact.html">Contact</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
   </div>
 </footer>
 
 <div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
   <div class="wrap">
-    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <p>サイトの利用状況を把握し、改善に役立てるため、Google Analyticsを使用しています。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
     <div class="cookie-actions">
-      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
-      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+      <button type="button" class="cookie-decline" id="cookie-decline">同意しない</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">同意する</button>
     </div>
   </div>
 </div>

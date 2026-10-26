@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,73 +28,74 @@
       </g></svg>
     </a>
     <nav class="site">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html" class="active">Terms of Service</a>
-      <a href="contact.html">Contact</a>
-      <a href="../terms.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="contact.html" class="active">お問い合わせ</a>
+      <a href="../contact.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Terms of Service</h1>
-    <p class="meta">Last updated: October 2026</p>
-
-    <p>
-      These Terms of Service (these "Terms") set out the conditions on which Bernal, Inc. (the "Company") provides "Bernal" (the "Service"), the search intelligence we offer. Businesses that deploy the Service (each, a "Client"), and anyone using the Service on a Client's website (each, a "User"), may use the Service only on acceptance of these Terms.
+    <h1>お問い合わせ</h1>
+    <p class="lede">
+      「Bernal」の導入、および当社に関するお問い合わせは、以下のフォームよりご連絡ください。導入をご検討中のメディア・パブリッシャー様、
+      ご利用中の読者様からのプライバシーに関するお問い合わせも、こちらで承っております。
     </p>
 
-    <h2>Article 1 (Application)</h2>
-    <p>These Terms set out the conditions on which the Service is provided, and the rights and obligations between the Company, Clients and Users, and apply to all use of the Service.</p>
+    <div class="contact-form-wrap">
+      <div id="form-error" class="form-notice error" style="display:none;">
+        送信に失敗しました。入力内容をご確認のうえ、再度お試しください。
+      </div>
 
-    <h2>Article 2 (Description of the Service)</h2>
-    <p>
-      The Service is a search engine installed via an embedded tag on a Client's website. It provides on-site search functionality to Users, and provides the Client with analysis such as search keyword trends and effectiveness measurement by membership tier.
-    </p>
+      <p class="form-heading">お問い合わせフォーム</p>
 
-    <h2>Article 3 (Relationship with Clients)</h2>
-    <p>
-      The terms on which the Service is provided to a Client — including contract term, fees and division of responsibilities — are set out separately in an agreement between the Company and that Client. These Terms set out the general conditions on which a User accesses the Service directly via a website.
-    </p>
+      <form class="contact-form" action="../send.php" method="POST">
+        <div class="hp-field" aria-hidden="true">
+          <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="field">
+          <label for="name" class="visually-hidden">お名前</label>
+          <input type="text" id="name" name="name" placeholder="お名前 *" required>
+        </div>
+        <div class="field">
+          <label for="company" class="visually-hidden">会社名</label>
+          <input type="text" id="company" name="company" placeholder="会社名（任意）">
+        </div>
+        <div class="field">
+          <label for="email" class="visually-hidden">メールアドレス</label>
+          <input type="email" id="email" name="email" placeholder="メールアドレス *" required>
+        </div>
+        <div class="field">
+          <label for="message" class="visually-hidden">お問い合わせ内容</label>
+          <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容 *" required></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="submit-btn">送信する</button>
+        </div>
+      </form>
 
-    <h2>Article 4 (Prohibited conduct)</h2>
-    <p>In using the Service, Users must not:</p>
-    <ol>
-      <li>act contrary to any law, public order or accepted standards of morality;</li>
-      <li>infringe the intellectual property rights, image rights, privacy or other rights of the Company or any third party;</li>
-      <li>access the Service's systems without authorisation, or interfere with their operation;</li>
-      <li>unlawfully collect or use information obtained through the Service; or</li>
-      <li>engage in any other conduct the Company considers inappropriate.</li>
-    </ol>
+      <script>
+        if (location.search.indexOf('error=1') !== -1) {
+          document.getElementById('form-error').style.display = 'block';
+        }
+      </script>
+    </div>
 
-    <h2>Article 5 (Suspension or alteration of the Service)</h2>
-    <p>
-      The Company may suspend, interrupt or alter all or part of the Service without prior notice to Users, including for reasons of system maintenance or in response to a fault.
-    </p>
+    <h2>導入をご検討の企業様へ</h2>
+    <ul>
+      <li>既存のアクセスログのみで実施できる簡易診断から承っております。新規計測やタグ改修は不要です。</li>
+      <li>15分のオンラインご相談で、貴社の状況に合わせたご提案をいたします。</li>
+    </ul>
 
-    <h2>Article 6 (Disclaimer)</h2>
-    <p>
-      The Company gives no warranty, express or implied, that the Service is free of factual or legal defect — including as to its safety, reliability, accuracy, completeness, validity, or fitness for any particular purpose.
-      Except where arising from the Company's wilful misconduct or gross negligence, the Company accepts no liability for loss arising to a User or Client out of the Service.
-    </p>
-
-    <h2>Article 7 (Intellectual property)</h2>
-    <p>Intellectual property rights relating to the Service belong to the Company, or to the third parties who license their rights to the Company.</p>
-
-    <h2>Article 8 (Changes to these Terms)</h2>
-    <p>
-      The Company may change these Terms without notice to Users, where it considers this necessary. Any change takes effect from the moment it is published on this page.
-    </p>
-
-    <h2>Article 9 (Governing law and jurisdiction)</h2>
-    <p>
-      These Terms are governed by the law of Japan. Any dispute arising in connection with the Service shall be submitted to the exclusive jurisdiction of the district court having jurisdiction over the location of the Company's registered head office, as the court of first instance.
-    </p>
-
-    <h2>Article 10 (Enquiries)</h2>
-    <p>For enquiries about these Terms, please contact us via our <a href="contact.html">Contact page</a>.</p>
+    <h2>お問い合わせの前に</h2>
+    <ul>
+      <li>プライバシーポリシーに関するご質問は、<a href="privacy.html">プライバシーポリシー</a>をあわせてご確認ください。</li>
+      <li>導入企業様経由でご利用中の方は、まずは導入企業様の窓口にもご確認いただけますと、スムーズに対応できる場合があります。</li>
+      <li>個人情報の開示等をご希望される場合は、ご本人確認のご協力をお願いする場合があります。</li>
+    </ul>
 
   </div>
 </main>
@@ -103,19 +104,19 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contact.html">Contact</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
   </div>
 </footer>
 
 <div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
   <div class="wrap">
-    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <p>サイトの利用状況を把握し、改善に役立てるため、Google Analyticsを使用しています。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
     <div class="cookie-actions">
-      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
-      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+      <button type="button" class="cookie-decline" id="cookie-decline">同意しない</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">同意する</button>
     </div>
   </div>
 </div>

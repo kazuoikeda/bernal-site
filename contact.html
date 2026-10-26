@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-GB">
 <head>
+<script>
+(function(){
+  try {
+    var pref = localStorage.getItem('bernal_lang');
+    var dest = 'jp/contact.html' + location.search + location.hash;
+    if (pref === 'ja') { location.replace(dest); return; }
+    if (pref !== 'en') {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('ja') === 0) { location.replace(dest); }
+    }
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
@@ -28,52 +41,52 @@
       </g></svg>
     </a>
     <nav class="site">
-      <a href="index.html">ホーム</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html" class="active">お問い合わせ</a>
-      <a href="en/contact.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="jp/contact.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>お問い合わせ</h1>
+    <h1>Contact</h1>
     <p class="lede">
-      「Bernal」の導入、および当社に関するお問い合わせは、以下のフォームよりご連絡ください。導入をご検討中のメディア・パブリッシャー様、
-      ご利用中の読者様からのプライバシーに関するお問い合わせも、こちらで承っております。
+      For enquiries about deploying our search intelligence, "Bernal", or about the Company more generally, please get in touch using the form below. We also welcome privacy-related enquiries from media and publishers considering deployment, and from readers currently using the Service.
     </p>
 
     <div class="contact-form-wrap">
       <div id="form-error" class="form-notice error" style="display:none;">
-        送信に失敗しました。入力内容をご確認のうえ、再度お試しください。
+        Something went wrong while sending your message. Please check your details and try again.
       </div>
 
-      <p class="form-heading">お問い合わせフォーム</p>
+      <p class="form-heading">Contact Us</p>
 
       <form class="contact-form" action="send.php" method="POST">
+        <input type="hidden" name="lang" value="en">
         <div class="hp-field" aria-hidden="true">
           <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="field">
-          <label for="name" class="visually-hidden">お名前</label>
-          <input type="text" id="name" name="name" placeholder="お名前 *" required>
+          <label for="name" class="visually-hidden">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Full Name *" required>
         </div>
         <div class="field">
-          <label for="company" class="visually-hidden">会社名</label>
-          <input type="text" id="company" name="company" placeholder="会社名（任意）">
+          <label for="company" class="visually-hidden">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company (optional)">
         </div>
         <div class="field">
-          <label for="email" class="visually-hidden">メールアドレス</label>
-          <input type="email" id="email" name="email" placeholder="メールアドレス *" required>
+          <label for="email" class="visually-hidden">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email *" required>
         </div>
         <div class="field">
-          <label for="message" class="visually-hidden">お問い合わせ内容</label>
-          <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容 *" required></textarea>
+          <label for="message" class="visually-hidden">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Message *" required></textarea>
         </div>
         <div class="submit-row">
-          <button type="submit" class="submit-btn">送信する</button>
+          <button type="submit" class="submit-btn">Send</button>
         </div>
       </form>
 
@@ -84,17 +97,17 @@
       </script>
     </div>
 
-    <h2>導入をご検討の企業様へ</h2>
+    <h2>For businesses considering deployment</h2>
     <ul>
-      <li>既存のアクセスログのみで実施できる簡易診断から承っております。新規計測やタグ改修は不要です。</li>
-      <li>15分のオンラインご相談で、貴社の状況に合わせたご提案をいたします。</li>
+      <li>We offer a simple diagnostic based solely on your existing access logs — no new measurement set-up or tag changes required.</li>
+      <li>A 15-minute online consultation lets us tailor a proposal to your situation.</li>
     </ul>
 
-    <h2>お問い合わせの前に</h2>
+    <h2>Before you contact us</h2>
     <ul>
-      <li>プライバシーポリシーに関するご質問は、<a href="privacy.html">プライバシーポリシー</a>をあわせてご確認ください。</li>
-      <li>導入企業様経由でご利用中の方は、まずは導入企業様の窓口にもご確認いただけますと、スムーズに対応できる場合があります。</li>
-      <li>個人情報の開示等をご希望される場合は、ご本人確認のご協力をお願いする場合があります。</li>
+      <li>For questions about our Privacy Policy, please also see our <a href="privacy.html">Privacy Policy</a>.</li>
+      <li>If you use the Service via a company that has deployed it, checking with that company's own contact point first may get you a quicker answer.</li>
+      <li>We may ask you to verify your identity if you wish to request disclosure of personal data or similar.</li>
     </ul>
 
   </div>
@@ -104,19 +117,19 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="contact.html">お問い合わせ</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </footer>
 
 <div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
   <div class="wrap">
-    <p>サイトの利用状況を把握し、改善に役立てるため、Google Analyticsを使用しています。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
     <div class="cookie-actions">
-      <button type="button" class="cookie-decline" id="cookie-decline">同意しない</button>
-      <button type="button" class="cookie-accept" id="cookie-accept">同意する</button>
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
     </div>
   </div>
 </div>

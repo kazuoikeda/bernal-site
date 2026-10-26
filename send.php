@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $lang = (($_POST['lang'] ?? '') === 'en') ? 'en' : 'ja';
-$contactPage = $lang === 'en' ? 'en/contact.html' : 'contact.html';
-$thanksPage = $lang === 'en' ? 'en/contact-thanks.html' : 'contact-thanks.html';
+$contactPage = $lang === 'en' ? 'contact.html' : 'jp/contact.html';
+$thanksPage = $lang === 'en' ? 'contact-thanks.html' : 'jp/contact-thanks.html';
 
 // Honeypot: silently drop likely spam submissions
 if (!empty($_POST['website'])) {
