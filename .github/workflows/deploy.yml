@@ -28,3 +28,6 @@ jobs:
             **/.git*
             **/.git*/**
             **/.github/**
+            CLAUDE.md
+            **/CLAUDE.md
+            **/.claude/**
