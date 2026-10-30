@@ -31,7 +31,7 @@
     <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     <nav class="site" id="site-nav">
       <a href="#problem">課題</a>
-      <a href="#compare">ふつうの検索との違い</a>
+      <a href="#compare">実際の検索</a>
       <a href="#pricing">料金</a>
       <a href="#vision">私たちの考え</a>
       <details class="lang-menu">
@@ -92,17 +92,17 @@
           <div class="demo-search">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5B6B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
             <label class="visually-hidden" for="demo-q">探していること</label>
-            <input id="demo-q" type="text" placeholder="例：疲れた夜に読む記事" autocomplete="off">
+            <input id="demo-q" type="text" placeholder="例：りくりゅう" autocomplete="off">
             <a class="demo-go" href="#compare">探す</a>
           </div>
-          <p class="demo-chips-label">迷ったら、こんなお題から</p>
+          <p class="demo-chips-label">日刊スポーツ・プレミアムで、実際に検索された言葉から</p>
           <div class="demo-chips">
-            <button type="button" class="demo-chip" aria-pressed="false">疲れた夜に読める短い記事</button>
-            <button type="button" class="demo-chip" aria-pressed="false">初めての人にもやさしい入門の記事</button>
-            <button type="button" class="demo-chip" aria-pressed="false">いま話題の出来事を、短く知りたい</button>
-            <button type="button" class="demo-chip" aria-pressed="false">あとで落ち着いて読みたい深い話</button>
+            <button type="button" class="demo-chip" aria-pressed="false">りくりゅう</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ゆなすみ</button>
+            <button type="button" class="demo-chip" aria-pressed="false">伏見</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ライオンズ</button>
           </div>
-          <p class="demo-note">デモ版です。「探す」を押すと、ふつうの検索との比較（イメージ）に移動します。</p>
+          <p class="demo-note">言葉を選ぶと、実際の検索結果が下に表示されます。</p>
         </div>
       </div>
     </div>
@@ -173,43 +173,26 @@
 
   <section class="block" id="compare">
     <div class="wrap">
-      <span class="eyebrow">ふつうの検索との違い</span>
-      <h2>同じ質問で、並べて比べてみる</h2>
-      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">疲れた夜に読める短い記事</span>」。ふつうの検索は言葉の一致を探し、Bernalは気持ちと目的を読み取ります。</p>
+      <span class="eyebrow">実際の検索</span>
+      <h2>日刊スポーツ・プレミアムでの、実際の検索</h2>
+      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">りくりゅう</span>」。愛称や略称でも、探している記事が上位に並びます。</p>
       <p class="meta" id="compare-hint" role="status" hidden></p>
-      <div class="compare-grid">
-        <div class="compare-col plain">
-          <p class="col-label">ふつうの検索</p>
-          <div class="result">
-            <p class="r-title">［記事タイトル例］疲労回復サプリ 比較ランキング</p>
-            <p class="r-why">「疲れた」という言葉が入っているだけのページ</p>
-          </div>
-          <div class="result">
-            <p class="r-title">［記事タイトル例］長編インタビュー 全5回（約60分）</p>
-            <p class="r-why">「記事」は合っているが、短くない</p>
-          </div>
-          <div class="result">
-            <p class="r-title">［記事タイトル例］夜勤明けの食事ガイド</p>
-            <p class="r-why">「夜」に反応しただけで、読み物ではない</p>
-          </div>
-        </div>
+      <div class="compare-grid" style="grid-template-columns:minmax(0,1fr);">
         <div class="compare-col bernal">
-          <p class="col-label">Bernal</p>
+          <p class="col-label">Bernalの検索結果</p>
+          <p class="meta" id="compare-count" style="margin:0 0 8px;">「りくりゅう」の検索結果：280件（上位3件を表示）</p>
           <div class="result">
-            <p class="r-title">［記事タイトル例］3分で読める、夜のひとやすみコラム</p>
-            <p class="r-why"><strong>なぜこれ？</strong>　「疲れた」「短い」という気分から、軽くて短い読み物を選びました。</p>
+            <p class="r-title">【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？</p>
           </div>
           <div class="result">
-            <p class="r-title">［記事タイトル例］眠る前に読みたい、小さな実話</p>
-            <p class="r-why"><strong>なぜこれ？</strong>　夜に読むことを想定して、読後感がやさしいものを選びました。</p>
+            <p class="r-title">【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？</p>
           </div>
           <div class="result">
-            <p class="r-title">［記事タイトル例］考えなくても読める、写真つき短編</p>
-            <p class="r-why"><strong>なぜこれ？</strong>　頭が疲れていても読み進めやすい構成だからです。</p>
+            <p class="r-title">高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー</p>
           </div>
         </div>
       </div>
-      <p class="meta" style="margin-top:12px;">※ 表示内容はイメージです。実際の検索結果とは異なります。</p>
+      <p class="meta" style="margin-top:12px;">※ 日刊スポーツ・プレミアムでのBernalの検索結果です。記事タイトルは画面の表示のままで、長いものは途中が省略されています。</p>
     </div>
   </section>
 
@@ -456,33 +439,21 @@
 </script>
 <script>
 (function(){
-  var DATA = {"why": "なぜこれ？", "plain": [[["［記事タイトル例］疲労回復サプリ 比較ランキング", "「疲れた」という言葉が入っているだけのページ"], ["［記事タイトル例］長編インタビュー 全5回（約60分）", "「記事」は合っているが、短くない"], ["［記事タイトル例］夜勤明けの食事ガイド", "「夜」に反応しただけで、読み物ではない"]], [["［記事タイトル例］用語集 全120語（五十音順）", "「入門」に近い言葉は合っているが、読み物ではない"], ["［記事タイトル例］上級者向け 入門のその先", "「入門」という言葉が入っているだけで、やさしくない"], ["［記事タイトル例］はじめての方への注意事項一覧", "「初めて」に反応しただけで、理解の助けにならない"]], [["［記事タイトル例］今週の出来事 年表（1年分）", "「出来事」は合っているが、短くない"], ["［記事タイトル例］話題の人物 長編インタビュー", "「話題」に反応しただけで、出来事の説明ではない"], ["［記事タイトル例］昔の話題を振り返る特集", "言葉は合っているが、「いま」ではない"]], [["［記事タイトル例］深海の生き物 図鑑", "「深い」という言葉に反応しただけのページ"], ["［記事タイトル例］話題の一言レビューまとめ", "短い感想の寄せ集めで、落ち着いて読むものではない"], ["［記事タイトル例］「あとで読む」機能の使い方", "機能の説明で、読み物ではない"]]], "bernal": [[["［記事タイトル例］3分で読める、夜のひとやすみコラム", "「疲れた」「短い」という気分から、軽くて短い読み物を選びました。"], ["［記事タイトル例］眠る前に読みたい、小さな実話", "夜に読むことを想定して、読後感がやさしいものを選びました。"], ["［記事タイトル例］考えなくても読める、写真つき短編", "頭が疲れていても読み進めやすい構成だからです。"]], [["［記事タイトル例］はじめの一歩：まずこの3本から", "予備知識がなくても読めるものを、順番つきで選びました。"], ["［記事タイトル例］専門用語なしで読む、10分でわかる全体像", "「やさしい」から、難しい言葉の少ない記事を選びました。"], ["［記事タイトル例］よくある疑問に答える、Q&A解説", "初めての人がつまずく点に、先に答えている記事です。"]], [["［記事タイトル例］きょうの要点、3分でわかる", "新しく、短くまとまっている記事を選びました。"], ["［記事タイトル例］話題の出来事、5つのポイント", "「短く知りたい」から、要点がまとまったものを選びました。"], ["［記事タイトル例］速報のあとに読む、背景の一枚解説", "いま何が起きたかを、手早く押さえられるからです。"]], [["［記事タイトル例］週末にじっくり、取材半年の長編ルポ", "時間をかけて読む前提の、読みごたえのある記事を選びました。"], ["［記事タイトル例］ひとつのテーマを掘り下げる、連載の最終回", "背景まで踏み込んだ、深い読み物だからです。"], ["［記事タイトル例］当事者に聞く、決断の舞台裏", "落ち着いて読みたい気分に合う、静かな語り口です。"]]]};
-  var HINT = "入力した言葉は、見本には反映されません。下の見本は「{q}」のお題の例です。";
+  var W = ["りくりゅう", "ゆなすみ", "伏見", "ライオンズ"], N = [280, 117, 154, 168], T = [["【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？", "【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？", "高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー"], ["【ゆなすみの言葉】「次は君たちだよ」“りくりゅう先輩”からか…られた言葉とは？", "【アーカイブ配信は終了しました】七夕の夜の「ゆなすみ」長…柚奈&森口澄士組", "長岡柚奈、森口澄士組「ゆなすみ」のお二人に動画でライブ…信の感想をいただきました"], ["【特別インタビュー4】阪神伏見寅威の証言「ハルトラ」はこう…て深まっていった", "【阪神連覇特集】伏見寅威が解説「虎相関図」、高橋遥人×才…浩人対談など充実品揃え", "【伏見寅威が解説！虎相関図】「天敵」「2人きりだと優しい」「…常に生意気」は誰？"], ["【獅子担日記１】金子真仁記者がつづるライオンズな日々「初…に球団本部長が登場した」", "【アーカイブ】渡辺久信さん&金子記者のトークライブ配信【…武ライオンズ新年会】", "【監修:金子真仁】埼玉西武ライオンズ選手名鑑2025　今季も実…「ひとこと」／第4回"]];
+  var CNT = "「{q}」の検索結果：{n}件（上位3件を表示）", HINT = "入力した言葉は、見本には反映されません。表示は「{q}」の検索結果です。";
   var input = document.getElementById('demo-q');
   var out = document.getElementById('compare-q');
+  var cnt = document.getElementById('compare-count');
   var chips = document.querySelectorAll('.demo-chip');
-  var cols = document.querySelectorAll('.compare-col');
+  var rows = document.querySelectorAll('#compare .result .r-title');
   var hint = document.getElementById('compare-hint');
-  if (!input || !out || cols.length < 2) return;
+  if (!input || !out || !rows.length) return;
   var current = 0;
   function render(i){
     current = i;
-    var sets = [DATA.plain[i], DATA.bernal[i]];
-    Array.prototype.forEach.call(cols, function(col, k){
-      var rs = col.querySelectorAll('.result');
-      Array.prototype.forEach.call(rs, function(r, n){
-        var item = sets[k][n]; if (!item) return;
-        r.querySelector('.r-title').textContent = item[0];
-        var why = r.querySelector('.r-why');
-        why.textContent = '';
-        if (k === 1) {
-          var st = document.createElement('strong'); st.textContent = DATA.why;
-          why.appendChild(st); why.appendChild(document.createTextNode('\u3000'));
-        }
-        why.appendChild(document.createTextNode(item[1]));
-      });
-    });
-    out.textContent = chips[i].textContent;
+    Array.prototype.forEach.call(rows, function(r, n){ r.textContent = T[i][n] || ''; });
+    out.textContent = W[i];
+    if (cnt) cnt.textContent = CNT.replace('{q}', W[i]).replace('{n}', N[i]);
   }
   function sync(){
     var v = input.value.trim(), idx = -1;
@@ -493,7 +464,7 @@
     });
     if (idx >= 0) render(idx);
     if (hint) {
-      if (v && idx < 0) { hint.textContent = HINT.replace('{q}', chips[current].textContent); hint.hidden = false; }
+      if (v && idx < 0) { hint.textContent = HINT.replace('{q}', W[current]); hint.hidden = false; }
       else { hint.hidden = true; }
     }
   }

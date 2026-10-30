@@ -44,7 +44,7 @@
     <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site" id="site-nav">
       <a href="#problem">The Problem</a>
-      <a href="#compare">How it differs</a>
+      <a href="#compare">Real searches</a>
       <a href="#pricing">Pricing</a>
       <a href="#vision">Our view</a>
       <details class="lang-menu">
@@ -105,17 +105,17 @@
           <div class="demo-search">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5B6B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
             <label class="visually-hidden" for="demo-q">What are you looking for</label>
-            <input id="demo-q" type="text" placeholder="e.g. a quick evening read" autocomplete="off">
+            <input id="demo-q" type="text" placeholder="e.g. りくりゅう" autocomplete="off">
             <a class="demo-go" href="#compare">Search</a>
           </div>
-          <p class="demo-chips-label">Not sure what to type? Try one of these</p>
+          <p class="demo-chips-label">Words readers really searched for on Nikkan Sports Premium</p>
           <div class="demo-chips">
-            <button type="button" class="demo-chip" aria-pressed="false">a short read for a tired evening</button>
-            <button type="button" class="demo-chip" aria-pressed="false">an easy introduction for beginners</button>
-            <button type="button" class="demo-chip" aria-pressed="false">today’s news in a few minutes</button>
-            <button type="button" class="demo-chip" aria-pressed="false">something deep to read later</button>
+            <button type="button" class="demo-chip" aria-pressed="false">りくりゅう</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ゆなすみ</button>
+            <button type="button" class="demo-chip" aria-pressed="false">伏見</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ライオンズ</button>
           </div>
-          <p class="demo-note">This is a demo. Press Search to see a mock-up comparing Bernal with conventional search.</p>
+          <p class="demo-note">Choose a word and the real search results appear below.</p>
         </div>
       </div>
     </div>
@@ -186,43 +186,26 @@
 
   <section class="block" id="compare">
     <div class="wrap">
-      <span class="eyebrow">How it differs</span>
-      <h2>The same question, side by side</h2>
-      <p class="lede" style="margin-bottom:24px;">You searched for ‘<span id="compare-q">a short read for a tired evening</span>’. Conventional search looks for matching words. Bernal reads the mood and the purpose behind them.</p>
+      <span class="eyebrow">Real searches</span>
+      <h2>Real searches on Nikkan Sports Premium</h2>
+      <p class="lede" style="margin-bottom:24px;">You searched for ‘<span id="compare-q">りくりゅう</span>’. Nicknames and short names still bring up the right articles.</p>
       <p class="meta" id="compare-hint" role="status" hidden></p>
-      <div class="compare-grid">
-        <div class="compare-col plain">
-          <p class="col-label">Conventional search</p>
-          <div class="result">
-            <p class="r-title">[Sample title] Fatigue-relief supplements: ranked</p>
-            <p class="r-why">Matches the word ‘tired’ and nothing else</p>
-          </div>
-          <div class="result">
-            <p class="r-title">[Sample title] Long-form interview, part 1 of 5 (about 60 min)</p>
-            <p class="r-why">It is an article, but it is not short</p>
-          </div>
-          <div class="result">
-            <p class="r-title">[Sample title] A meal guide for night-shift workers</p>
-            <p class="r-why">Reacts to ‘night’, but it is not something to read</p>
-          </div>
-        </div>
+      <div class="compare-grid" style="grid-template-columns:minmax(0,1fr);">
         <div class="compare-col bernal">
-          <p class="col-label">Bernal</p>
+          <p class="col-label">Bernal results</p>
+          <p class="meta" id="compare-count" style="margin:0 0 8px;">Results for ‘りくりゅう’: 280 (top 3 shown)</p>
           <div class="result">
-            <p class="r-title">[Sample title] A 3-minute column to unwind at night</p>
-            <p class="r-why"><strong>Why this?</strong>  From ‘tired’ and ‘short’, we picked something light that reads quickly.</p>
+            <p class="r-title">【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？</p>
           </div>
           <div class="result">
-            <p class="r-title">[Sample title] A small true story for before bed</p>
-            <p class="r-why"><strong>Why this?</strong>  Written for evening reading, with a gentle ending.</p>
+            <p class="r-title">【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？</p>
           </div>
           <div class="result">
-            <p class="r-title">[Sample title] A short photo story you can read without thinking</p>
-            <p class="r-why"><strong>Why this?</strong>  Its structure is easy to follow even when you are worn out.</p>
+            <p class="r-title">高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー</p>
           </div>
         </div>
       </div>
-      <p class="meta" style="margin-top:12px;">Note: this is a mock-up. Real results will differ.</p>
+      <p class="meta" style="margin-top:12px;">Results from Bernal on Nikkan Sports Premium. The articles are in Japanese; titles are shown as they appear on screen, with long ones shortened.</p>
     </div>
   </section>
 
@@ -469,33 +452,21 @@
 </script>
 <script>
 (function(){
-  var DATA = {"why": "Why this?", "plain": [[["[Sample title] Fatigue-relief supplements: ranked", "Matches the word ‘tired’ and nothing else"], ["[Sample title] Long-form interview, part 1 of 5 (about 60 min)", "It is an article, but it is not short"], ["[Sample title] A meal guide for night-shift workers", "Reacts to ‘night’, but it is not something to read"]], [["[Sample title] Glossary: 120 terms, A to Z", "Close to ‘introduction’ by word, but not something to read"], ["[Sample title] For experts: what comes after the basics", "Has the word ‘basics’, but is not easy"], ["[Sample title] Notes for first-time users: a full list", "Reacts to ‘first’, but does not help you understand"]], [["[Sample title] This year in a timeline (12 months)", "About events, but it is not short"], ["[Sample title] A long interview with a person in the news", "Reacts to ‘news’, but does not explain what happened"], ["[Sample title] Looking back at old headlines", "Matches the words, but it is not ‘now’"]], [["[Sample title] Deep-sea creatures: a field guide", "Reacts only to the word ‘deep’"], ["[Sample title] A roundup of one-line reviews", "A pile of short remarks, not a calm read"], ["[Sample title] How to use the ‘read later’ feature", "A feature guide, not something to read"]]], "bernal": [[["[Sample title] A 3-minute column to unwind at night", "From ‘tired’ and ‘short’, we picked something light that reads quickly."], ["[Sample title] A small true story for before bed", "Written for evening reading, with a gentle ending."], ["[Sample title] A short photo story you can read without thinking", "Its structure is easy to follow even when you are worn out."]], [["[Sample title] First steps: start with these three", "Readable with no background knowledge, in a set order."], ["[Sample title] The big picture in 10 minutes, no jargon", "From ‘easy’, we picked articles with few hard words."], ["[Sample title] Common questions, answered in Q&A form", "It answers the points where newcomers get stuck."]], [["[Sample title] Today’s key points, in 3 minutes", "Recent, and put together briefly."], ["[Sample title] The news in five points", "From ‘short’, we picked a piece that sums up the main points."], ["[Sample title] The background after the breaking news, on one page", "It lets you catch up on what just happened, fast."]], [["[Sample title] A weekend long read: six months of reporting", "Written to be read slowly, with real depth."], ["[Sample title] Digging into one theme: the final part of a series", "It goes into the background, so it is a deep read."], ["[Sample title] Behind a decision: in the person’s own words", "A quiet voice that suits a calm, unhurried read."]]]};
-  var HINT = "Your own words are not used in this mock-up. The samples below are for ‘{q}’.";
+  var W = ["りくりゅう", "ゆなすみ", "伏見", "ライオンズ"], N = [280, 117, 154, 168], T = [["【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？", "【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？", "高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー"], ["【ゆなすみの言葉】「次は君たちだよ」“りくりゅう先輩”からか…られた言葉とは？", "【アーカイブ配信は終了しました】七夕の夜の「ゆなすみ」長…柚奈&森口澄士組", "長岡柚奈、森口澄士組「ゆなすみ」のお二人に動画でライブ…信の感想をいただきました"], ["【特別インタビュー4】阪神伏見寅威の証言「ハルトラ」はこう…て深まっていった", "【阪神連覇特集】伏見寅威が解説「虎相関図」、高橋遥人×才…浩人対談など充実品揃え", "【伏見寅威が解説！虎相関図】「天敵」「2人きりだと優しい」「…常に生意気」は誰？"], ["【獅子担日記１】金子真仁記者がつづるライオンズな日々「初…に球団本部長が登場した」", "【アーカイブ】渡辺久信さん&金子記者のトークライブ配信【…武ライオンズ新年会】", "【監修:金子真仁】埼玉西武ライオンズ選手名鑑2025　今季も実…「ひとこと」／第4回"]];
+  var CNT = "Results for ‘{q}’: {n} (top 3 shown)", HINT = "Your own words are not used in this mock-up. The results shown are for ‘{q}’.";
   var input = document.getElementById('demo-q');
   var out = document.getElementById('compare-q');
+  var cnt = document.getElementById('compare-count');
   var chips = document.querySelectorAll('.demo-chip');
-  var cols = document.querySelectorAll('.compare-col');
+  var rows = document.querySelectorAll('#compare .result .r-title');
   var hint = document.getElementById('compare-hint');
-  if (!input || !out || cols.length < 2) return;
+  if (!input || !out || !rows.length) return;
   var current = 0;
   function render(i){
     current = i;
-    var sets = [DATA.plain[i], DATA.bernal[i]];
-    Array.prototype.forEach.call(cols, function(col, k){
-      var rs = col.querySelectorAll('.result');
-      Array.prototype.forEach.call(rs, function(r, n){
-        var item = sets[k][n]; if (!item) return;
-        r.querySelector('.r-title').textContent = item[0];
-        var why = r.querySelector('.r-why');
-        why.textContent = '';
-        if (k === 1) {
-          var st = document.createElement('strong'); st.textContent = DATA.why;
-          why.appendChild(st); why.appendChild(document.createTextNode('\u3000'));
-        }
-        why.appendChild(document.createTextNode(item[1]));
-      });
-    });
-    out.textContent = chips[i].textContent;
+    Array.prototype.forEach.call(rows, function(r, n){ r.textContent = T[i][n] || ''; });
+    out.textContent = W[i];
+    if (cnt) cnt.textContent = CNT.replace('{q}', W[i]).replace('{n}', N[i]);
   }
   function sync(){
     var v = input.value.trim(), idx = -1;
@@ -506,7 +477,7 @@
     });
     if (idx >= 0) render(idx);
     if (hint) {
-      if (v && idx < 0) { hint.textContent = HINT.replace('{q}', chips[current].textContent); hint.hidden = false; }
+      if (v && idx < 0) { hint.textContent = HINT.replace('{q}', W[current]); hint.hidden = false; }
       else { hint.hidden = true; }
     }
   }
