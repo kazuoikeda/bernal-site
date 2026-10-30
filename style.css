@@ -648,9 +648,9 @@ footer.site nav a:hover { color: var(--ink); }
 /* ---- Top page additions: demo search, number band, side-by-side comparison ---- */
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
 }
 
 .demo-card {
@@ -667,7 +667,9 @@ footer.site nav a:hover { color: var(--ink); }
   margin: 0 0 4px;
 }
 
-.hero-grid h1 { font-size: 28px; }
+.hero-grid h1 { font-size: 32px; text-wrap: balance; }
+.hero-grid .demo-card { padding: 28px 32px; }
+.hero-grid .demo-search input { font-size: 16px; }
 
 .demo-card .demo-title {
   font-size: 16px;
@@ -874,3 +876,12 @@ main > section.block { padding: 80px 0; border-top: none; }
 main > section.block:nth-of-type(even) { background: #F4F7F5; }
 main > section.block h2 { margin-bottom: 28px; }
 @media (max-width: 720px) { main > section.block { padding: 56px 0; } }
+
+@media (max-width: 480px) {
+  .hero-grid h1 { font-size: 26px; }
+  .hero-grid .demo-card { padding: 18px 14px; }
+  .demo-search { padding: 4px 4px 4px 12px; gap: 6px; }
+  .demo-search svg { display: none; }
+  .hero-grid .demo-search input { font-size: 15px; }
+  .demo-search .demo-go { padding: 11px 16px; }
+}
