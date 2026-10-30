@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
-<link rel="stylesheet" href="style.css?v=20261030b">
+<link rel="stylesheet" href="style.css?v=20261030o">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -40,21 +40,52 @@
       <path d="M143 0V1484H424V0Z" transform="translate(5682.12 0)"/>
       </g></svg>
     </a>
-    <nav class="site">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="jp/contact.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="site" id="site-nav">
+      <a href="index.html#problem">The Problem</a>
+      <a href="index.html#compare">How it works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#vision">Our view</a>
+      <details class="lang-menu">
+        <summary aria-label="Choose language"><svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.800 2.600 4.200 5.600 4.200 9s-1.400 6.400-4.200 9c-2.800-2.600-4.200-5.600-4.200-9S9.200 5.600 12 3z"/></svg><span>English</span><svg class="chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="lang-list">
+          <li><a href="jp/contact.html" lang="ja" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">Japanese</a></li>
+          <li><a href="contact.html" lang="en" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}" aria-current="true" class="is-current">English</a></li>
+        </ul>
+      </details>
+      <a class="nav-cta" href="contact.html">Talk to us</a>
     </nav>
   </div>
+  <script>
+  (function(){
+    var h=document.querySelector('header.site'),b=document.getElementById('menu-toggle');
+    if(!h||!b)return;
+    document.documentElement.classList.add('js');
+    b.addEventListener('click',function(){
+      var o=h.classList.toggle('menu-open');
+      b.setAttribute('aria-expanded',o?'true':'false');
+    });
+    h.querySelectorAll('nav.site a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');});});
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&h.classList.contains('menu-open')){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.focus();}
+    });
+  })();
+  </script>
+  <script>
+  (function(){
+    var d=document.querySelector('details.lang-menu');
+    if(!d)return;
+    document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});
+  })();
+  </script>
 </header>
 
 <main>
   <div class="wrap">
     <h1>Contact</h1>
     <p class="lede">
-      For enquiries about deploying our search intelligence, "Bernal", or about the Company more generally, please get in touch using the form below. We also welcome privacy-related enquiries from media and publishers considering deployment, and from readers currently using the Service.
+      If you have questions about adding Bernal to your site, or about our company, please use the form below. We also welcome privacy questions from media and publishers thinking about Bernal, and from readers who use it.
     </p>
 
     <div class="contact-box" style="max-width:560px;margin:28px auto 0;">
@@ -126,6 +157,7 @@
   <div class="wrap">
     <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
     <nav>
+      <a href="index.html">Home</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="contact.html">Contact</a>
