@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
 <meta name="description" content="Bernal, Inc.は、有料会員制メディアの検索ログを、意図理解型の検索エンジンと会員区分別の計測によって、編集とビジネス両方の意思決定材料に変える検索インテリジェンス「Bernal」を開発・運営しています。">
-<link rel="stylesheet" href="../style.css?v=20261030m">
+<link rel="stylesheet" href="../style.css?v=20261030o">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="icon" type="image/png" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -176,6 +176,7 @@
       <span class="eyebrow">ふつうの検索との違い</span>
       <h2>同じ質問で、並べて比べてみる</h2>
       <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">疲れた夜に読める短い記事</span>」。ふつうの検索は言葉の一致を探し、Bernalは気持ちと目的を読み取ります。</p>
+      <p class="meta" id="compare-hint" role="status" hidden></p>
       <div class="compare-grid">
         <div class="compare-col plain">
           <p class="col-label">ふつうの検索</p>
@@ -455,23 +456,49 @@
 </script>
 <script>
 (function(){
+  var DATA = {"why": "なぜこれ？", "plain": [[["［記事タイトル例］疲労回復サプリ 比較ランキング", "「疲れた」という言葉が入っているだけのページ"], ["［記事タイトル例］長編インタビュー 全5回（約60分）", "「記事」は合っているが、短くない"], ["［記事タイトル例］夜勤明けの食事ガイド", "「夜」に反応しただけで、読み物ではない"]], [["［記事タイトル例］用語集 全120語（五十音順）", "「入門」に近い言葉は合っているが、読み物ではない"], ["［記事タイトル例］上級者向け 入門のその先", "「入門」という言葉が入っているだけで、やさしくない"], ["［記事タイトル例］はじめての方への注意事項一覧", "「初めて」に反応しただけで、理解の助けにならない"]], [["［記事タイトル例］今週の出来事 年表（1年分）", "「出来事」は合っているが、短くない"], ["［記事タイトル例］話題の人物 長編インタビュー", "「話題」に反応しただけで、出来事の説明ではない"], ["［記事タイトル例］昔の話題を振り返る特集", "言葉は合っているが、「いま」ではない"]], [["［記事タイトル例］深海の生き物 図鑑", "「深い」という言葉に反応しただけのページ"], ["［記事タイトル例］話題の一言レビューまとめ", "短い感想の寄せ集めで、落ち着いて読むものではない"], ["［記事タイトル例］「あとで読む」機能の使い方", "機能の説明で、読み物ではない"]]], "bernal": [[["［記事タイトル例］3分で読める、夜のひとやすみコラム", "「疲れた」「短い」という気分から、軽くて短い読み物を選びました。"], ["［記事タイトル例］眠る前に読みたい、小さな実話", "夜に読むことを想定して、読後感がやさしいものを選びました。"], ["［記事タイトル例］考えなくても読める、写真つき短編", "頭が疲れていても読み進めやすい構成だからです。"]], [["［記事タイトル例］はじめの一歩：まずこの3本から", "予備知識がなくても読めるものを、順番つきで選びました。"], ["［記事タイトル例］専門用語なしで読む、10分でわかる全体像", "「やさしい」から、難しい言葉の少ない記事を選びました。"], ["［記事タイトル例］よくある疑問に答える、Q&A解説", "初めての人がつまずく点に、先に答えている記事です。"]], [["［記事タイトル例］きょうの要点、3分でわかる", "新しく、短くまとまっている記事を選びました。"], ["［記事タイトル例］話題の出来事、5つのポイント", "「短く知りたい」から、要点がまとまったものを選びました。"], ["［記事タイトル例］速報のあとに読む、背景の一枚解説", "いま何が起きたかを、手早く押さえられるからです。"]], [["［記事タイトル例］週末にじっくり、取材半年の長編ルポ", "時間をかけて読む前提の、読みごたえのある記事を選びました。"], ["［記事タイトル例］ひとつのテーマを掘り下げる、連載の最終回", "背景まで踏み込んだ、深い読み物だからです。"], ["［記事タイトル例］当事者に聞く、決断の舞台裏", "落ち着いて読みたい気分に合う、静かな語り口です。"]]]};
+  var HINT = "入力した言葉は、見本には反映されません。下の見本は「{q}」のお題の例です。";
   var input = document.getElementById('demo-q');
   var out = document.getElementById('compare-q');
   var chips = document.querySelectorAll('.demo-chip');
-  if (!input || !out) return;
-  var fallback = out.textContent;
-  function sync(){
-    var v = input.value.trim();
-    out.textContent = v || fallback;
-    Array.prototype.forEach.call(chips, function(c){
-      c.setAttribute('aria-pressed', c.textContent === input.value ? 'true' : 'false');
+  var cols = document.querySelectorAll('.compare-col');
+  var hint = document.getElementById('compare-hint');
+  if (!input || !out || cols.length < 2) return;
+  var current = 0;
+  function render(i){
+    current = i;
+    var sets = [DATA.plain[i], DATA.bernal[i]];
+    Array.prototype.forEach.call(cols, function(col, k){
+      var rs = col.querySelectorAll('.result');
+      Array.prototype.forEach.call(rs, function(r, n){
+        var item = sets[k][n]; if (!item) return;
+        r.querySelector('.r-title').textContent = item[0];
+        var why = r.querySelector('.r-why');
+        why.textContent = '';
+        if (k === 1) {
+          var st = document.createElement('strong'); st.textContent = DATA.why;
+          why.appendChild(st); why.appendChild(document.createTextNode('\u3000'));
+        }
+        why.appendChild(document.createTextNode(item[1]));
+      });
     });
+    out.textContent = chips[i].textContent;
+  }
+  function sync(){
+    var v = input.value.trim(), idx = -1;
+    Array.prototype.forEach.call(chips, function(c, i){
+      var on = c.textContent === input.value;
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) idx = i;
+    });
+    if (idx >= 0) render(idx);
+    if (hint) {
+      if (v && idx < 0) { hint.textContent = HINT.replace('{q}', chips[current].textContent); hint.hidden = false; }
+      else { hint.hidden = true; }
+    }
   }
   Array.prototype.forEach.call(chips, function(c){
-    c.addEventListener('click', function(){
-      input.value = c.textContent;
-      sync();
-    });
+    c.addEventListener('click', function(){ input.value = c.textContent; sync(); });
   });
   input.addEventListener('input', sync);
 })();
