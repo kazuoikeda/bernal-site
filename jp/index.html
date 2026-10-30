@@ -480,17 +480,20 @@
     }
   }
   Array.prototype.forEach.call(chips, function(c){
-    c.addEventListener('click', function(){ input.value = c.textContent; sync(); });
+    c.addEventListener('click', function(){ input.value = c.textContent; sync(); goDown(); });
   });
   input.addEventListener('input', sync);
-  input.addEventListener('keydown', function(e){
-    if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
-    e.preventDefault();
-    sync();
+  function goDown(){
     var t = document.getElementById('compare');
     if (!t) return;
     var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     t.scrollIntoView({behavior: calm ? 'auto' : 'smooth', block: 'start'});
+  }
+  input.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    sync();
+    goDown();
   });
 })();
 </script>
