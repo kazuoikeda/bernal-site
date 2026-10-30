@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
-<link rel="stylesheet" href="style.css?v=20261030d">
+<link rel="stylesheet" href="style.css?v=20261030e">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -40,7 +40,8 @@
       <path d="M143 0V1484H424V0Z" transform="translate(5682.12 0)"/>
       </g></svg>
     </a>
-    <nav class="site">
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="site" id="site-nav">
       <a href="index.html">Home</a>
       <a href="privacy.html" class="active">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
@@ -48,6 +49,20 @@
       <a href="jp/privacy.html" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">日本語</a>
     </nav>
   </div>
+  <script>
+  (function(){
+    var h=document.querySelector('header.site'),b=document.getElementById('menu-toggle');
+    if(!h||!b)return;
+    document.documentElement.classList.add('js');
+    b.addEventListener('click',function(){
+      var o=h.classList.toggle('menu-open');
+      b.setAttribute('aria-expanded',o?'true':'false');
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&h.classList.contains('menu-open')){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.focus();}
+    });
+  })();
+  </script>
 </header>
 
 <main>
