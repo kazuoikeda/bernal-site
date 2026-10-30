@@ -32,7 +32,7 @@
 <meta name="twitter:description" content="Bernal turns reader search behaviour into decisions for editorial and business teams.">
 <meta name="twitter:image" content="https://bernal-inc.com/assets/og-en.png">
 <meta name="description" content="Bernal, Inc. builds and operates &quot;Bernal&quot;, a search intelligence engine for subscription media. By combining intent-based search with membership-tier measurement, it turns reader search behaviour into decisions for both editorial and business teams.">
-<link rel="stylesheet" href="style.css?v=20261030p">
+<link rel="stylesheet" href="style.css?v=20261030s">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -129,7 +129,7 @@
             <button type="button" class="demo-chip" aria-pressed="false">Ajax</button>
             <button type="button" class="demo-chip" aria-pressed="false">Red Bull</button>
           </div>
-          <p class="demo-note">Choose a word and an illustration of the search appears below.</p>
+          <p class="demo-note" id="demo-note">Choose a word, then press Search (or Enter) to see an illustration of the search below.</p>
         </div>
       </div>
     </div>
@@ -512,19 +512,39 @@
     }
   }
   Array.prototype.forEach.call(chips, function(c){
-    c.addEventListener('click', function(){ input.value = c.textContent; sync(); goDown(); });
+    c.addEventListener('click', function(){ input.value = c.textContent; sync(); setReady(true); });
   });
-  input.addEventListener('input', sync);
+  input.addEventListener('input', function(){ sync(); setReady(false); });
+  if (goBtn) goBtn.addEventListener('click', function(e){ e.preventDefault(); sync(); setReady(false); goDown(); });
+  var note = document.getElementById('demo-note');
+  var box = document.querySelector('.demo-search');
+  var goBtn = document.querySelector('.demo-search .demo-go');
+  var noteDefault = note ? note.textContent : '';
+  var READY = 'The word is in. Now press Search (or Enter).';
+  function setReady(on){
+    if (box) box.classList.toggle('is-ready', !!on);
+    if (note) {
+      note.textContent = on ? READY : noteDefault;
+      note.classList.toggle('is-ready', !!on);
+    }
+  }
   function goDown(){
     var t = document.getElementById('compare');
     if (!t) return;
+    var ae = document.activeElement;
+    if (ae && ae.blur) ae.blur();
     var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    t.scrollIntoView({behavior: calm ? 'auto' : 'smooth', block: 'start'});
+    function go(){
+      var y = t.getBoundingClientRect().top + (window.pageYOffset || 0) - 80;
+      window.scrollTo({left: 0, top: Math.max(0, y), behavior: calm ? 'auto' : 'smooth'});
+    }
+    setTimeout(go, 280);
   }
   input.addEventListener('keydown', function(e){
     if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
     e.preventDefault();
     sync();
+    setReady(false);
     goDown();
   });
 })();
