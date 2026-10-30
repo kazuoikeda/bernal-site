@@ -114,7 +114,8 @@
             <button type="button" class="demo-chip" aria-pressed="false">ゆなすみ</button>
             <button type="button" class="demo-chip" aria-pressed="false">伏見</button>
             <button type="button" class="demo-chip" aria-pressed="false">長嶋</button>
-            <button type="button" class="demo-chip" aria-pressed="false">西武</button>
+            <button type="button" class="demo-chip" aria-pressed="false">阪神</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ライオンズ</button>
           </div>
           <p class="demo-note">Choose a word and the real search results appear below.</p>
         </div>
@@ -189,11 +190,12 @@
     <div class="wrap">
       <span class="eyebrow">Real searches</span>
       <h2>The same word, side by side</h2>
-      <p class="lede" style="margin-bottom:24px;">You searched for ‘<span id="compare-q">りくりゅう</span>’. Left: a search without Bernal, covering free articles as well. Right: a search with Bernal, looking inside paid (Premium) articles. With Bernal, Premium articles that match the word you searched for appear at the top.</p>
+      <p class="lede" style="margin-bottom:24px;">You searched for ‘<span id="compare-q">りくりゅう</span>’. Left: a non-Bernal search, covering free articles as well. Right: Bernal, looking inside paid (Premium) articles. With Bernal, Premium articles that match the word you searched for appear at the top.</p>
       <p class="meta" id="compare-hint" role="status" hidden></p>
+      <p id="compare-gloss" style="margin:-8px 0 20px;padding:12px 16px;background:#F2F8F3;border-left:4px solid #3DBF5C;border-radius:8px;color:#2B4532;font-size:15px;line-height:1.7;">A fan nickname for a figure-skating pair. It is the name fans use, not the official one — like searching for a football club or player by a nickname.</p>
       <div class="compare-grid">
         <div class="compare-col plain">
-          <p class="col-label">Without Bernal</p>
+          <p class="col-label">A non-Bernal search</p>
           <p class="meta" id="compare-count-f" style="margin:0 0 8px;">Results: 200+</p>
           <div class="result">
             <p class="r-title">【フィギュア】りくりゅうに浅田真央さんからサプライズの婚約祝い 三浦璃来さん「うれしい」</p>
@@ -206,7 +208,7 @@
           </div>
         </div>
         <div class="compare-col bernal">
-          <p class="col-label">With Bernal (inside Premium articles)</p>
+          <p class="col-label">Bernal (inside Premium articles)</p>
           <p class="meta" id="compare-count-b" style="margin:0 0 8px;">Results: 280 (top 3 shown)</p>
           <div class="result">
             <p class="r-title">【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？</p>
@@ -219,7 +221,7 @@
           </div>
         </div>
       </div>
-      <p class="meta" style="margin-top:12px;">Results checked on 30 October 2026. The search without Bernal covers free news as well; the search with Bernal looks inside Premium articles only. The articles are in Japanese; titles are shown as they appear on screen, and long ones on the right are shortened.</p>
+      <p class="meta" style="margin-top:12px;">Results checked on 30 October 2026. The non-Bernal search covers free news as well; Bernal looks inside Premium articles only. The examples in the green box are only there to explain each word; they are not search results. The articles are in Japanese; titles are shown as they appear on screen, and long ones on the right are shortened.</p>
     </div>
   </section>
 
@@ -477,12 +479,15 @@
   var br = document.querySelectorAll('#compare .compare-col.bernal .r-title');
   var hint = document.getElementById('compare-hint');
   if (!input || !out || !fr.length || !br.length) return;
+  var G = ["A fan nickname for a figure-skating pair. It is the name fans use, not the official one — like searching for a football club or player by a nickname.", "Another pair’s nickname, made by joining parts of their names. Can a search find the right articles from the nickname alone?", "A surname on its own. Like typing ‘Messi’ to find articles about Lionel Messi, without the full name.", "A surname shared by famous people. Like typing ‘Ronaldo’ and having to guess which one you meant.", "A team name that is also a railway and a place name. Like ‘Red Bull’, which is a drinks company and also the name of football and other teams.", "A name that several teams share. Like ‘Ajax’: an Amsterdam football club, but also a cleaning product and a web-development technique."];
+  var gloss = document.getElementById('compare-gloss');
   var current = 0;
   function render(i){
     current = i;
     Array.prototype.forEach.call(fr, function(r, n){ r.textContent = F[i][n] || ''; });
     Array.prototype.forEach.call(br, function(r, n){ r.textContent = B[i][n] || ''; });
     out.textContent = W[i];
+    if (gloss) gloss.textContent = G[i];
     if (cf) cf.textContent = CF.replace('{n}', FN[i]);
     if (cb) cb.textContent = CB.replace('{n}', BN[i]);
   }

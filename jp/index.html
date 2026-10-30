@@ -101,7 +101,8 @@
             <button type="button" class="demo-chip" aria-pressed="false">ゆなすみ</button>
             <button type="button" class="demo-chip" aria-pressed="false">伏見</button>
             <button type="button" class="demo-chip" aria-pressed="false">長嶋</button>
-            <button type="button" class="demo-chip" aria-pressed="false">西武</button>
+            <button type="button" class="demo-chip" aria-pressed="false">阪神</button>
+            <button type="button" class="demo-chip" aria-pressed="false">ライオンズ</button>
           </div>
           <p class="demo-note">言葉を選ぶと、実際の検索結果が下に表示されます。</p>
         </div>
@@ -176,11 +177,12 @@
     <div class="wrap">
       <span class="eyebrow">実際の検索</span>
       <h2>同じ言葉で、並べて比べてみる</h2>
-      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">りくりゅう</span>」。左は無料の記事も含めてサイト全体を探す、Bernalを使わない検索。右はプレミアム（有料）記事の中を探す、Bernalを使った検索です。Bernalでは、探している言葉に合うプレミアム記事が上位に並んでいます。</p>
+      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">りくりゅう</span>」。左は無料の記事も含めてサイト全体を探す、Bernalではない検索。右はプレミアム（有料）記事の中を探す、Bernalの検索です。Bernalでは、探している言葉に合うプレミアム記事が上位に並んでいます。</p>
       <p class="meta" id="compare-hint" role="status" hidden></p>
+      <p id="compare-gloss" style="margin:-8px 0 20px;padding:12px 16px;background:#F2F8F3;border-left:4px solid #3DBF5C;border-radius:8px;color:#2B4532;font-size:15px;line-height:1.7;">フィギュアスケートのペアの愛称です。公式の名前ではなく、ファンが付けた呼び名で探す例です。サッカーなら、クラブや選手を、ファンのあだ名で検索するようなものです。</p>
       <div class="compare-grid">
         <div class="compare-col plain">
-          <p class="col-label">Bernalなしの検索</p>
+          <p class="col-label">Bernalではない検索</p>
           <p class="meta" id="compare-count-f" style="margin:0 0 8px;">検索結果：200件以上</p>
           <div class="result">
             <p class="r-title">【フィギュア】りくりゅうに浅田真央さんからサプライズの婚約祝い 三浦璃来さん「うれしい」</p>
@@ -193,7 +195,7 @@
           </div>
         </div>
         <div class="compare-col bernal">
-          <p class="col-label">Bernalありの検索（プレミアム記事の中）</p>
+          <p class="col-label">Bernalの検索（プレミアム記事の中）</p>
           <p class="meta" id="compare-count-b" style="margin:0 0 8px;">検索結果：280件（上位3件）</p>
           <div class="result">
             <p class="r-title">【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？</p>
@@ -206,7 +208,7 @@
           </div>
         </div>
       </div>
-      <p class="meta" style="margin-top:12px;">※ 2026年10月30日に確認した検索結果です。Bernalなしの検索は無料のニュースを含めて広く探し、Bernalありの検索はプレミアム記事の中から探します。記事タイトルは画面の表示のままで、右の長いものは途中が省略されています。</p>
+      <p class="meta" style="margin-top:12px;">※ 2026年10月30日に確認した検索結果です。Bernalではない検索は無料のニュースを含めて広く探し、Bernalはプレミアム記事の中から探します。緑の枠の中の例えは説明用で、検索結果ではありません。記事タイトルは画面の表示のままで、右の長いものは途中が省略されています。</p>
     </div>
   </section>
 
@@ -464,12 +466,15 @@
   var br = document.querySelectorAll('#compare .compare-col.bernal .r-title');
   var hint = document.getElementById('compare-hint');
   if (!input || !out || !fr.length || !br.length) return;
+  var G = ["フィギュアスケートのペアの愛称です。公式の名前ではなく、ファンが付けた呼び名で探す例です。サッカーなら、クラブや選手を、ファンのあだ名で検索するようなものです。", "こちらもペアの愛称です。二人の名前をつなげた呼び名でも、関係する記事を探せるかを見る例です。", "選手の名字だけで探す例です。たとえば「メッシ」と入れて、リオネル・メッシの記事を探すのと同じです。", "同じ名字の有名人がいる例です。たとえば「ロナウド」と入れると、どのロナウドか迷うのと同じです。", "球団名であり、鉄道や地名にも使われる言葉の例です。たとえば「レッドブル」が、飲料の会社であり、サッカーなどのチーム名でもあるのと同じです。", "同じ名前を、複数のチームが使っている例です。たとえば「アヤックス」は、アムステルダムのサッカークラブですが、掃除用品やウェブの技術名にも使われています。"];
+  var gloss = document.getElementById('compare-gloss');
   var current = 0;
   function render(i){
     current = i;
     Array.prototype.forEach.call(fr, function(r, n){ r.textContent = F[i][n] || ''; });
     Array.prototype.forEach.call(br, function(r, n){ r.textContent = B[i][n] || ''; });
     out.textContent = W[i];
+    if (gloss) gloss.textContent = G[i];
     if (cf) cf.textContent = CF.replace('{n}', FN[i]);
     if (cb) cb.textContent = CB.replace('{n}', BN[i]);
   }
