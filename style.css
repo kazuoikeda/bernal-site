@@ -1037,3 +1037,5 @@ header.site { padding: 16px 0; }
 .vision-body { max-width: 760px; margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
 .vision-body p { margin: 0; font-size: 15px; line-height: 1.9; color: var(--muted); }
 .vision-body strong { color: var(--ink); }
+#vision-contact { margin-top: 6px; }
+#vision-contact a { color: var(--green-dark, #1F7A3A); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
