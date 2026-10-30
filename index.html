@@ -18,7 +18,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
 <meta name="description" content="Bernal, Inc. builds and operates &quot;Bernal&quot;, a search intelligence engine for subscription media. By combining intent-based search with membership-tier measurement, it turns reader search behaviour into decisions for both editorial and business teams.">
-<link rel="stylesheet" href="style.css?v=20261021">
+<link rel="stylesheet" href="style.css?v=20261030b">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -55,18 +55,67 @@
   <div class="wrap">
 
     <div class="hero">
-      <span class="tag">Search Intelligence for Subscription Media</span>
-      <h1>Turning archive assets<br>into revenue, through search intelligence.</h1>
-      <p class="lede">
-        Bernal is a search engine installed on subscription media websites. Through intent-based search and measurement by membership tier, it turns a reader's search — the most honest first-party data there is — into decisions for editorial and business teams alike.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="contact.html">Talk to us about deployment</a>
-        <a class="btn btn-ghost" href="#pricing">See pricing</a>
+      <div class="hero-grid">
+        <div>
+          <span class="tag">Search Intelligence for Subscription Media</span>
+          <h1>Turning archive assets<br>into revenue, through search intelligence.</h1>
+          <p class="lede">
+            Bernal is a search engine installed on subscription media websites. Through intent-based search and measurement by membership tier, it turns a reader's search — the most honest first-party data there is — into decisions for editorial and business teams alike.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Talk to us about deployment</a>
+            <a class="btn btn-ghost" href="#pricing">See pricing</a>
+          </div>
+        </div>
+        <div class="demo-card">
+          <p class="demo-eyebrow">Try it as a reader</p>
+          <p class="demo-title">Search in your own words.</p>
+          <div class="demo-search">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5B6B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <label class="visually-hidden" for="demo-q">What are you looking for</label>
+            <input id="demo-q" type="text" placeholder="e.g. a quick evening read" autocomplete="off">
+            <a class="demo-go" href="#compare">Search</a>
+          </div>
+          <p class="demo-chips-label">Not sure what to type? Try one of these</p>
+          <div class="demo-chips">
+            <button type="button" class="demo-chip" aria-pressed="false">a short read for a tired evening</button>
+            <button type="button" class="demo-chip" aria-pressed="false">an easy introduction for beginners</button>
+            <button type="button" class="demo-chip" aria-pressed="false">what is in the news, in a few minutes</button>
+            <button type="button" class="demo-chip" aria-pressed="false">a deep read for later</button>
+          </div>
+          <p class="demo-note">This is a demo. Press Search to jump to a mock-up comparison with a conventional search.</p>
+        </div>
       </div>
     </div>
 
   </div>
+
+  <section class="block" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="numband">
+        <p class="band-label">Measured at partner media</p>
+        <div class="numband-grid">
+          <div>
+            <div class="big">~73%</div>
+            <p class="cap">of clicks from search go to articles published 31 or more days ago</p>
+          </div>
+          <div>
+            <div class="big">~56%</div>
+            <p class="cap">click-through rate on search results (about 3.7x the benchmark)</p>
+          </div>
+          <div>
+            <div class="big">~8%</div>
+            <p class="cap">zero-result search rate (far below typical industry levels)</p>
+          </div>
+          <div>
+            <div class="big">1 in 5</div>
+            <p class="cap">of readers who reach the paywall via search go on to subscribe (at least · lower bound)</p>
+          </div>
+        </div>
+        <p class="note">Compared with before deployment; full-period average. The subscription rate is based on weekly unique users and shows the lower bound of a 95% confidence interval.</p>
+      </div>
+    </div>
+  </section>
 
   <section class="block">
     <div class="wrap">
@@ -89,6 +138,47 @@
           <p>Not being able to find the article you were after is a small but reliable reason members let their subscription lapse.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="compare">
+    <div class="wrap">
+      <span class="eyebrow">How it differs</span>
+      <h2>The same question, side by side</h2>
+      <p class="lede" style="margin-bottom:24px;">The query: “<span id="compare-q">a short read for a tired evening</span>”. A conventional search looks for matching words. Bernal reads the mood and the purpose behind them.</p>
+      <div class="compare-grid">
+        <div class="compare-col plain">
+          <p class="col-label">Conventional search</p>
+          <div class="result">
+            <p class="r-title">[Sample title] Fatigue-relief supplements: ranked</p>
+            <p class="r-why">Matches the word “tired” and nothing else</p>
+          </div>
+          <div class="result">
+            <p class="r-title">[Sample title] Long-form interview, part 1 of 5 (about 60 min)</p>
+            <p class="r-why">It is an article, but it is not short</p>
+          </div>
+          <div class="result">
+            <p class="r-title">[Sample title] A meal guide for night-shift workers</p>
+            <p class="r-why">Reacts to “night”, but it is not something to read</p>
+          </div>
+        </div>
+        <div class="compare-col bernal">
+          <p class="col-label">Bernal</p>
+          <div class="result">
+            <p class="r-title">[Sample title] A 3-minute column to unwind at night</p>
+            <p class="r-why"><strong>Why this?</strong>  From “tired” and “short”, we picked something light that reads quickly.</p>
+          </div>
+          <div class="result">
+            <p class="r-title">[Sample title] A small true story for before bed</p>
+            <p class="r-why"><strong>Why this?</strong>  Written for evening reading, with a gentle ending.</p>
+          </div>
+          <div class="result">
+            <p class="r-title">[Sample title] A short photo story you can read without thinking</p>
+            <p class="r-why"><strong>Why this?</strong>  Its structure is easy to follow even when you are worn out.</p>
+          </div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:12px;">Note: this is a mock-up. Real results will differ.</p>
     </div>
   </section>
 
@@ -180,7 +270,7 @@
         <div class="price-card light">
           <div class="amount">$0.35</div>
           <div class="unit">per paying member, per month (after the trial)</div>
-          <p>Usage-based pricing tied to your number of paying members. Billed separately from your membership and paywall platform, so it has no bearing on your existing billing arrangements. Set-up cost: $0</p>
+          <p>Usage-based pricing tied to your number of paying members. Set-up cost: $0</p>
         </div>
       </div>
       <div class="roi-note">
@@ -341,6 +431,29 @@
     try { localStorage.setItem('bernal_cookie_consent', 'denied'); } catch(e){}
     hideBanner();
   });
+})();
+</script>
+<script>
+(function(){
+  var input = document.getElementById('demo-q');
+  var out = document.getElementById('compare-q');
+  var chips = document.querySelectorAll('.demo-chip');
+  if (!input || !out) return;
+  var fallback = out.textContent;
+  function sync(){
+    var v = input.value.trim();
+    out.textContent = v || fallback;
+    Array.prototype.forEach.call(chips, function(c){
+      c.setAttribute('aria-pressed', c.textContent === input.value ? 'true' : 'false');
+    });
+  }
+  Array.prototype.forEach.call(chips, function(c){
+    c.addEventListener('click', function(){
+      input.value = c.textContent;
+      sync();
+    });
+  });
+  input.addEventListener('input', sync);
 })();
 </script>
 </body>

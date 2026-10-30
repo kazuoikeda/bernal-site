@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
 <meta name="description" content="Bernal, Inc.は、有料会員制メディアの検索ログを、意図理解型の検索エンジンと会員区分別の計測によって、編集とビジネス両方の意思決定材料に変える検索インテリジェンス「Bernal」を開発・運営しています。">
-<link rel="stylesheet" href="../style.css?v=20261021">
+<link rel="stylesheet" href="../style.css?v=20261030b">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="icon" type="image/png" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -42,18 +42,67 @@
   <div class="wrap">
 
     <div class="hero">
-      <span class="tag">Search Intelligence for Subscription Media</span>
-      <h1>アーカイブ資産を、<br>収益に変える検索インテリジェンス。</h1>
-      <p class="lede">
-        Bernalは、有料会員制メディア様のサイトに設置する検索エンジンです。読者の検索という一次データを、意図理解型の検索と会員区分別の計測によって、編集とビジネス両方の意思決定材料に変えます。
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="contact.html">導入について相談する</a>
-        <a class="btn btn-ghost" href="#pricing">料金を見る</a>
+      <div class="hero-grid">
+        <div>
+          <span class="tag">Search Intelligence for Subscription Media</span>
+          <h1>アーカイブ資産を、<br>収益に変える検索インテリジェンス。</h1>
+          <p class="lede">
+            Bernalは、有料会員制メディア様のサイトに設置する検索エンジンです。読者の検索という一次データを、意図理解型の検索と会員区分別の計測によって、編集とビジネス両方の意思決定材料に変えます。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">導入について相談する</a>
+            <a class="btn btn-ghost" href="#pricing">料金を見る</a>
+          </div>
+        </div>
+        <div class="demo-card">
+          <p class="demo-eyebrow">読者の目線で、試してみる</p>
+          <p class="demo-title">探していることを、そのままの言葉で。</p>
+          <div class="demo-search">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5B6B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <label class="visually-hidden" for="demo-q">探していること</label>
+            <input id="demo-q" type="text" placeholder="例：疲れた夜に読む記事" autocomplete="off">
+            <a class="demo-go" href="#compare">探す</a>
+          </div>
+          <p class="demo-chips-label">迷ったら、こんなお題から</p>
+          <div class="demo-chips">
+            <button type="button" class="demo-chip" aria-pressed="false">疲れた夜に読める短い記事</button>
+            <button type="button" class="demo-chip" aria-pressed="false">初めての人にもやさしい入門の記事</button>
+            <button type="button" class="demo-chip" aria-pressed="false">いま話題の出来事を、短く知りたい</button>
+            <button type="button" class="demo-chip" aria-pressed="false">あとで落ち着いて読みたい深い話</button>
+          </div>
+          <p class="demo-note">デモ版です。「探す」を押すと、ふつうの検索との比較（イメージ）に移動します。</p>
+        </div>
       </div>
     </div>
 
   </div>
+
+  <section class="block" style="padding-top:8px;">
+    <div class="wrap">
+      <div class="numband">
+        <p class="band-label">導入先メディアでの実測値</p>
+        <div class="numband-grid">
+          <div>
+            <div class="big">約73%</div>
+            <p class="cap">検索経由のクリックのうち、公開から31日以上たった記事に向かう割合</p>
+          </div>
+          <div>
+            <div class="big">約56%</div>
+            <p class="cap">検索結果のクリック率（水準比 約3.7倍）</p>
+          </div>
+          <div>
+            <div class="big">約8%</div>
+            <p class="cap">ゼロ件検索率（業界の一般的な水準を大きく下回る）</p>
+          </div>
+          <div>
+            <div class="big">5人に1人</div>
+            <p class="cap">検索経由でペイウォールに到達し、課金に至った読者（少なくとも・下限値）</p>
+          </div>
+        </div>
+        <p class="note">導入前との比較、全期間平均。課金の割合は週次ユニークユーザー数ベースで、95%信頼区間の下限値です。</p>
+      </div>
+    </div>
+  </section>
 
   <section class="block">
     <div class="wrap">
@@ -76,6 +125,47 @@
           <p>読みたい記事にたどり着けない体験は、会員が更新をやめる小さいが確実な理由になる。</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="compare">
+    <div class="wrap">
+      <span class="eyebrow">ふつうの検索との違い</span>
+      <h2>同じ質問で、並べて比べてみる</h2>
+      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">疲れた夜に読める短い記事</span>」。ふつうの検索は言葉の一致を探し、Bernalは気持ちと目的を読み取ります。</p>
+      <div class="compare-grid">
+        <div class="compare-col plain">
+          <p class="col-label">ふつうの検索</p>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］疲労回復サプリ 比較ランキング</p>
+            <p class="r-why">「疲れた」という言葉が入っているだけのページ</p>
+          </div>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］長編インタビュー 全5回（約60分）</p>
+            <p class="r-why">「記事」は合っているが、短くない</p>
+          </div>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］夜勤明けの食事ガイド</p>
+            <p class="r-why">「夜」に反応しただけで、読み物ではない</p>
+          </div>
+        </div>
+        <div class="compare-col bernal">
+          <p class="col-label">Bernal</p>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］3分で読める、夜のひとやすみコラム</p>
+            <p class="r-why"><strong>なぜこれ？</strong>　「疲れた」「短い」という気分から、軽くて短い読み物を選びました。</p>
+          </div>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］眠る前に読みたい、小さな実話</p>
+            <p class="r-why"><strong>なぜこれ？</strong>　夜に読むことを想定して、読後感がやさしいものを選びました。</p>
+          </div>
+          <div class="result">
+            <p class="r-title">［記事タイトル例］考えなくても読める、写真つき短編</p>
+            <p class="r-why"><strong>なぜこれ？</strong>　頭が疲れていても読み進めやすい構成だからです。</p>
+          </div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:12px;">※ 表示内容はイメージです。実際の検索結果とは異なります。</p>
     </div>
   </section>
 
@@ -167,7 +257,7 @@
         <div class="price-card light">
           <div class="amount">¥40</div>
           <div class="unit">有料会員1人・月あたり（トライアル後）</div>
-          <p>有料会員数に連動した従量課金。会員基盤・ペイウォールの契約とは別建てで請求されるため、既存の課金体系には影響しない。初期導入費用：¥0</p>
+          <p>有料会員数に連動した従量課金。初期導入費用：¥0</p>
         </div>
       </div>
       <div class="roi-note">
@@ -328,6 +418,29 @@
     try { localStorage.setItem('bernal_cookie_consent', 'denied'); } catch(e){}
     hideBanner();
   });
+})();
+</script>
+<script>
+(function(){
+  var input = document.getElementById('demo-q');
+  var out = document.getElementById('compare-q');
+  var chips = document.querySelectorAll('.demo-chip');
+  if (!input || !out) return;
+  var fallback = out.textContent;
+  function sync(){
+    var v = input.value.trim();
+    out.textContent = v || fallback;
+    Array.prototype.forEach.call(chips, function(c){
+      c.setAttribute('aria-pressed', c.textContent === input.value ? 'true' : 'false');
+    });
+  }
+  Array.prototype.forEach.call(chips, function(c){
+    c.addEventListener('click', function(){
+      input.value = c.textContent;
+      sync();
+    });
+  });
+  input.addEventListener('input', sync);
 })();
 </script>
 </body>
