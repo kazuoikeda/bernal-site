@@ -100,7 +100,8 @@
             <button type="button" class="demo-chip" aria-pressed="false">りくりゅう</button>
             <button type="button" class="demo-chip" aria-pressed="false">ゆなすみ</button>
             <button type="button" class="demo-chip" aria-pressed="false">伏見</button>
-            <button type="button" class="demo-chip" aria-pressed="false">ライオンズ</button>
+            <button type="button" class="demo-chip" aria-pressed="false">長嶋</button>
+            <button type="button" class="demo-chip" aria-pressed="false">西武</button>
           </div>
           <p class="demo-note">言葉を選ぶと、実際の検索結果が下に表示されます。</p>
         </div>
@@ -174,26 +175,13 @@
   <section class="block" id="compare">
     <div class="wrap">
       <span class="eyebrow">実際の検索</span>
-      <h2>同じ言葉で、並べて比べてみる</h2>
-      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">りくりゅう</span>」。同じ言葉でも、並ぶ記事が変わります。</p>
+      <h2>日刊スポーツ・プレミアムでの、実際の検索</h2>
+      <p class="lede" style="margin-bottom:24px;">入力したのは「<span id="compare-q">りくりゅう</span>」。愛称や短い言葉でも、関係する記事が見つかります。</p>
       <p class="meta" id="compare-hint" role="status" hidden></p>
-      <div class="compare-grid">
-        <div class="compare-col plain">
-          <p class="col-label">日刊スポーツ公式サイトの検索</p>
-          <p class="meta" id="compare-count-f" style="margin:0 0 8px;">検索結果：200件以上</p>
-          <div class="result">
-            <p class="r-title">【フィギュア】りくりゅうに浅田真央さんからサプライズの婚約祝い 三浦璃来さん「うれしい」</p>
-          </div>
-          <div class="result">
-            <p class="r-title">【フィギュア】「りくりゅう」木原龍一さん、五輪フリー前に1時間半の仮眠「絶対手放せない」</p>
-          </div>
-          <div class="result">
-            <p class="r-title">「完璧なモデルさん」「りくちゃんアイドルみたい」りくりゅうの“モデル”姿にファン悶絶</p>
-          </div>
-        </div>
+      <div class="compare-grid" style="grid-template-columns:minmax(0,1fr);">
         <div class="compare-col bernal">
-          <p class="col-label">Bernal（日刊スポーツ・プレミアム）</p>
-          <p class="meta" id="compare-count-b" style="margin:0 0 8px;">検索結果：280件（上位3件）</p>
+          <p class="col-label">Bernalの検索結果</p>
+          <p class="meta" id="compare-count" style="margin:0 0 8px;">「りくりゅう」の検索結果：280件（上位3件を表示）</p>
           <div class="result">
             <p class="r-title">【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？</p>
           </div>
@@ -205,7 +193,7 @@
           </div>
         </div>
       </div>
-      <p class="meta" style="margin-top:12px;">※ 2026年10月30日に確認した検索結果です。左は日刊スポーツ公式サイト、右は日刊スポーツ・プレミアムでのBernalの検索です。記事タイトルは画面の表示のままで、右の長いものは途中が省略されています。</p>
+      <p class="meta" style="margin-top:12px;">※ 日刊スポーツ・プレミアムでのBernalの検索結果です。記事タイトルは画面の表示のままで、長いものは途中が省略されています。</p>
     </div>
   </section>
 
@@ -452,25 +440,21 @@
 </script>
 <script>
 (function(){
-  var W = ["りくりゅう", "ゆなすみ", "伏見", "ライオンズ"], F = [["【フィギュア】りくりゅうに浅田真央さんからサプライズの婚約祝い 三浦璃来さん「うれしい」", "【フィギュア】「りくりゅう」木原龍一さん、五輪フリー前に1時間半の仮眠「絶対手放せない」", "「完璧なモデルさん」「りくちゃんアイドルみたい」りくりゅうの“モデル”姿にファン悶絶"], ["【フィギュア】左足骨折「ゆなすみ」長岡柚奈へエール続々「焦らず治して」「元気に戻ってきて」", "「ゆなすみ」長岡柚奈が骨折...過去にはバドミントン桃田賢斗らも負傷/アスリートの交通事故", "【フィギュア】「ゆなすみ」長岡柚奈が事故で左足骨折「悔しい気持ち」自転車で帰宅中に車と接触"], ["【阪神】FA申請スタート 新たに4選手が権利取得 熟考中の熊谷敬宥「野球人生を考えて」", "【阪神】36歳伏見寅威が隠れた快挙 リーグまたぎ2年連続で沢村賞投手と最強バッテリー", "【阪神】木浪聖也らFA4人が去就熟考へ 熊谷敬宥「分析して」伏見寅威「話せることない」"], ["【巨人】松井秀喜新監督「ライオンズやホークスのような時代をつくれていない」黄金時代復活へ決意", "元アイドルの日本人台湾チアがシーズン終了報告「楽しく幸せに過ごすことができました」", "【西武】担当記者が勝手につづる「ライオンズ×伊豆」公開秋季キャンプならファンも急坂体験?"]], B = [["【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？", "【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？", "高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー"], ["【ゆなすみの言葉】「次は君たちだよ」“りくりゅう先輩”からか…られた言葉とは？", "【アーカイブ配信は終了しました】七夕の夜の「ゆなすみ」長…柚奈&森口澄士組", "長岡柚奈、森口澄士組「ゆなすみ」のお二人に動画でライブ…信の感想をいただきました"], ["【特別インタビュー4】阪神伏見寅威の証言「ハルトラ」はこう…て深まっていった", "【阪神連覇特集】伏見寅威が解説「虎相関図」、高橋遥人×才…浩人対談など充実品揃え", "【伏見寅威が解説！虎相関図】「天敵」「2人きりだと優しい」「…常に生意気」は誰？"], ["【獅子担日記１】金子真仁記者がつづるライオンズな日々「初…に球団本部長が登場した」", "【アーカイブ】渡辺久信さん&金子記者のトークライブ配信【…武ライオンズ新年会】", "【監修:金子真仁】埼玉西武ライオンズ選手名鑑2025　今季も実…「ひとこと」／第4回"]], FN = ["200件以上", "115件", "200件以上", "200件以上"], BN = ["280件", "117件", "154件", "168件"];
-  var CF = "検索結果：{n}", CB = "検索結果：{n}（上位3件）", HINT = "入力した言葉は、見本には反映されません。表示は「{q}」の検索結果です。";
+  var W = ["りくりゅう", "ゆなすみ", "伏見", "長嶋", "西武"], N = [280, 117, 154, 359, 878], T = [["【りくりゅうの言葉】「アリを10匹入れよう！」ありがとうツアー…こだわり満載！？", "【りくりゅうの言葉】「素敵に年を重ねていきたい」未来への手…に込めた思いは？", "高橋成美さん「一強でなく層の厚さを」りくりゅう引退後のペ…語る　単独インタビュー"], ["【ゆなすみの言葉】「次は君たちだよ」“りくりゅう先輩”からか…られた言葉とは？", "【アーカイブ配信は終了しました】七夕の夜の「ゆなすみ」長…柚奈&森口澄士組", "長岡柚奈、森口澄士組「ゆなすみ」のお二人に動画でライブ…信の感想をいただきました"], ["【特別インタビュー4】阪神伏見寅威の証言「ハルトラ」はこう…て深まっていった", "【阪神連覇特集】伏見寅威が解説「虎相関図」、高橋遥人×才…浩人対談など充実品揃え", "【伏見寅威が解説！虎相関図】「天敵」「2人きりだと優しい」「…常に生意気」は誰？"], ["巨人新人開幕投手3人目で勝利挙げた竹丸和幸、絡み合う長…茂雄／物語のあるデータ", "【長嶋茂雄さん】皇室観戦試合で不滅の打棒　スペシャル舞…こそ躍動／物語のあるデータ", "【私と長嶋さん〈25〉】「高校大学の友人は一生…」　山口・周…市との意外な縁／4"], ["【西武ネビン】帰国前に記者に残した2つのニホンゴ　頼れる…ーダーはまたやって来る", "【別れの節】雨降る10･26スーツ姿の西武7選手がそれ…れ迎えた人生の岐路", "「5年って短いんで」元西武ドラ１渡部健人「またやりたいなと…岡山からNPB復帰を"]];
+  var CNT = "「{q}」の検索結果：{n}件（上位3件を表示）", HINT = "入力した言葉は、見本には反映されません。表示は「{q}」の検索結果です。";
   var input = document.getElementById('demo-q');
   var out = document.getElementById('compare-q');
+  var cnt = document.getElementById('compare-count');
   var chips = document.querySelectorAll('.demo-chip');
-  var cf = document.getElementById('compare-count-f');
-  var cb = document.getElementById('compare-count-b');
-  var fr = document.querySelectorAll('#compare .compare-col.plain .r-title');
-  var br = document.querySelectorAll('#compare .compare-col.bernal .r-title');
+  var rows = document.querySelectorAll('#compare .result .r-title');
   var hint = document.getElementById('compare-hint');
-  if (!input || !out || !fr.length || !br.length) return;
+  if (!input || !out || !rows.length) return;
   var current = 0;
   function render(i){
     current = i;
-    Array.prototype.forEach.call(fr, function(r, n){ r.textContent = F[i][n] || ''; });
-    Array.prototype.forEach.call(br, function(r, n){ r.textContent = B[i][n] || ''; });
+    Array.prototype.forEach.call(rows, function(r, n){ r.textContent = T[i][n] || ''; });
     out.textContent = W[i];
-    if (cf) cf.textContent = CF.replace('{n}', FN[i]);
-    if (cb) cb.textContent = CB.replace('{n}', BN[i]);
+    if (cnt) cnt.textContent = CNT.replace('{q}', W[i]).replace('{n}', N[i]);
   }
   function sync(){
     var v = input.value.trim(), idx = -1;
