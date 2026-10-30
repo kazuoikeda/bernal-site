@@ -1031,3 +1031,5 @@ header.site { padding: 16px 0; }
   nav.site a { text-align: left; }
   nav.site a.nav-cta { text-align: center; }
 }
+
+.hero-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
