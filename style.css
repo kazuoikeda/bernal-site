@@ -868,3 +868,9 @@ footer.site nav a:hover { color: var(--ink); }
   .numband .big { font-size: 32px; }
   .numband { padding: 28px 22px; }
 }
+
+/* Top page: airy rhythm closer to the approved mockup */
+main > section.block { padding: 80px 0; border-top: none; }
+main > section.block:nth-of-type(even) { background: #F4F7F5; }
+main > section.block h2 { margin-bottom: 28px; }
+@media (max-width: 720px) { main > section.block { padding: 56px 0; } }
