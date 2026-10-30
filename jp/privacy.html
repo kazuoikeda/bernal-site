@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bernal</title>
-<link rel="stylesheet" href="../style.css?v=20261030g">
+<link rel="stylesheet" href="../style.css?v=20261030k">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="icon" type="image/png" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -33,7 +33,13 @@
       <a href="index.html#compare">ふつうの検索との違い</a>
       <a href="index.html#pricing">料金</a>
       <a href="index.html#vision">私たちの考え</a>
-      <a href="../privacy.html" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">EN</a>
+      <details class="lang-menu">
+        <summary aria-label="言語を選ぶ"><svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.800 2.600 4.200 5.600 4.200 9s-1.400 6.400-4.200 9c-2.800-2.600-4.200-5.600-4.200-9S9.200 5.600 12 3z"/></svg><span>日本語</span><svg class="chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="lang-list">
+          <li><a href="privacy.html" lang="ja" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}" aria-current="true" class="is-current">日本語</a></li>
+          <li><a href="../privacy.html" lang="en" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}">English</a></li>
+        </ul>
+      </details>
       <a class="nav-cta" href="contact.html">導入について相談する</a>
     </nav>
   </div>
@@ -50,6 +56,14 @@
     document.addEventListener('keydown',function(e){
       if(e.key==='Escape'&&h.classList.contains('menu-open')){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.focus();}
     });
+  })();
+  </script>
+  <script>
+  (function(){
+    var d=document.querySelector('details.lang-menu');
+    if(!d)return;
+    document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});
   })();
   </script>
 </header>
