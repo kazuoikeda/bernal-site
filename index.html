@@ -496,6 +496,15 @@
     c.addEventListener('click', function(){ input.value = c.textContent; sync(); });
   });
   input.addEventListener('input', sync);
+  input.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    sync();
+    var t = document.getElementById('compare');
+    if (!t) return;
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    t.scrollIntoView({behavior: calm ? 'auto' : 'smooth', block: 'start'});
+  });
 })();
 </script>
 </body>
