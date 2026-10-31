@@ -512,10 +512,15 @@
     }
   }
   Array.prototype.forEach.call(chips, function(c){
-    c.addEventListener('click', function(){ input.value = c.textContent; sync(); setReady(true); });
+    c.addEventListener('click', function(){
+      input.value = c.textContent; sync(); setReady(true);
+      /* Computer with a mouse: put the cursor back in the box so Enter works. Phones: leave it, so no keyboard pops up. */
+      if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+        try { input.focus({preventScroll: true}); } catch (e) { input.focus(); }
+      }
+    });
   });
   input.addEventListener('input', function(){ sync(); setReady(false); });
-  if (goBtn) goBtn.addEventListener('click', function(e){ e.preventDefault(); sync(); setReady(false); goDown(); });
   var note = document.getElementById('demo-note');
   var box = document.querySelector('.demo-search');
   var goBtn = document.querySelector('.demo-search .demo-go');
@@ -540,6 +545,7 @@
     }
     setTimeout(go, 280);
   }
+  if (goBtn) goBtn.addEventListener('click', function(e){ e.preventDefault(); sync(); setReady(false); goDown(); });
   input.addEventListener('keydown', function(e){
     if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
     e.preventDefault();
