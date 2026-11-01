@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bernal-inc.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/index.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/index.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/contact.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/contact.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/careers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/careers.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/careers.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/careers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/careers.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/careers.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/terms.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/terms.html"/>
+  </url>
+</urlset>
