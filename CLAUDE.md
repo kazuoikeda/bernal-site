@@ -102,8 +102,11 @@
 
 ## 次にやること
 
-1. 日本語の LinkedIn 投稿。
-   - 先に、Google の Search Console に `https://bernal-inc.com/sitemap.xml` を登録する（池田さんのアカウントで。まだ）。
+1. 日本語の LinkedIn 投稿（予約投稿済み）。
+   - Google の Search Console は登録済み（2026-11-01）。種類は「ドメイン」で `bernal-inc.com`。確認は Xserver の DNS に TXT を足して行った（既存の SPF などには触れていない）。
+   - サイトマップ `https://bernal-inc.com/sitemap.xml` は送信済み。ステータスは「成功しました」、検出ページ数は 10（英語・日本語 各5ページ）。
+   - 左上の登録名に、前の会社の別サイトの登録も残っている。`bernal-inc.com` に切り替えて見ること。
+   - ページを増やしたら `sitemap.xml` に足し、Search Console のページ数が合っているか見る。
 2. 検索サービス（Bernal の管理画面側）に記事を取り込む方法を、委託先に確認する（月曜）。
    クローラーが集めた記事は、いまは GitHub のファイルに残るだけで、検索サービスにはつながっていない。
 3. クローラーの登録サイトを増やす。
