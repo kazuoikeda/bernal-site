@@ -13,3 +13,6 @@
   RewriteRule ^en/?$ / [R=301,L]
   RewriteRule ^en/(.+)$ /$1 [R=301,L]
 </IfModule>
+
+# Friendly page for addresses that do not exist
+ErrorDocument 404 /404.html

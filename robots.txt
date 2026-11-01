@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /contact-thanks.html
+Disallow: /jp/contact-thanks.html
+Disallow: /send.php
+
+Sitemap: https://bernal-inc.com/sitemap.xml

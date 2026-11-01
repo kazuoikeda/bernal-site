@@ -429,6 +429,9 @@ footer.site nav a {
 
 footer.site nav a:hover { color: var(--ink); }
 
+footer.site nav { display: flex; flex-wrap: wrap; gap: 4px 0; }
+footer.site nav a { white-space: nowrap; }
+
 .contact-box {
   border: 1px solid var(--border);
   border-radius: 10px;
