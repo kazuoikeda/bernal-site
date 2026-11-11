@@ -102,11 +102,12 @@
       <tr><th>Anonymous ID</th><td>A randomly generated identifier stored in the browser's localStorage (contains no name, membership details or other identifying information)</td></tr>
       <tr><th>Session ID</th><td>A randomly generated identifier stored in the browser's sessionStorage (cleared when the tab is closed)</td></tr>
       <tr><th>Page URL</th><td>The URL of the page on which the search box is installed</td></tr>
-      <tr><th>Usage event data</th><td>Search executions, the number of results shown, articles clicked and their position, display of and clicks on related articles, and timestamps</td></tr>
+      <tr><th>Usage event data</th><td>Page views; display of, focus on and typing into the search box; search executions; the number of results shown and moves between result pages; articles clicked and their position; display and selection of popular search terms and suggestions; what is shown and done when a search returns no results; clicks on guide links; display of and clicks on related articles; where the search box is placed; device type (mobile, tablet or desktop only); the group assigned in comparison tests of search features; and timestamps</td></tr>
+      <tr><th>Membership category</th><td>Only where provided by the client: whether the user is a paying member, a free member or not logged in (no member ID, name or similar information)</td></tr>
       <tr><th>Conversation content</th><td>In the conversation shown when a search returns no results, the text a user enters and the Service's replies. This is processed only to produce the replies and is not stored in our database</td></tr>
     </table>
     <p>
-      IP address and browser information (User-Agent) reach our servers as an inherent feature of how data is transmitted over the internet, but are not stored in our database.
+      IP address and browser information (User-Agent) reach our servers as an inherent feature of how data is transmitted over the internet. Of these, the only thing we store in our search logs is the device type derived from the browser information (mobile, tablet or desktop); we do not store the browser information itself. We do not store IP addresses in our search logs. To limit traffic and prevent unauthorised access, we may temporarily hold a value derived from the IP address.
     </p>
     <p>
       The anonymous ID and session ID above are both randomly generated identifiers. We do not link them to a name, email address or any other information capable of identifying an individual.
@@ -116,7 +117,7 @@
     </p>
 
     <h2>4. How we collect it</h2>
-    <p>Information is collected automatically, in the user's browser, through the Service's programme (tag), when a user interacts with the search box.</p>
+    <p>Information is collected automatically, in the user's browser, through the Service's programme (tag), when a user views a page on which the Service's tag is installed and when a user interacts with the search box.</p>
 
     <h2>5. Purpose of use</h2>
     <ol>
@@ -124,6 +125,8 @@
       <li>To improve search accuracy</li>
       <li>To produce usage reports for clients (such as popular keywords and click-through rates)</li>
       <li>To suggest related articles to users whose search returned no results</li>
+      <li>To run comparison tests (A/B tests) to check how easy the search features are to use</li>
+      <li>To aggregate terms searched by at least a certain number of users and show them as popular search terms or suggestions (terms searched by only a few users, or that could identify an individual, are not shown)</li>
     </ol>
     <p>We do not use this information beyond the purposes above.</p>
 
@@ -132,9 +135,9 @@
       When a user views or interacts with a page on which the Service's tag is installed, the following information is sent to our servers (the recipient).
     </p>
     <table class="policy">
-      <tr><th>Information transmitted</th><td>Search terms, anonymous ID, session ID, page URL, usage event data (search executions, number of results shown, clicks, ranking, timestamps, etc.)</td></tr>
+      <tr><th>Information transmitted</th><td>Search terms, anonymous ID, session ID, page URL, membership category (only where provided by the client), usage event data (page views, display of/focus on/typing into the search box, search executions, number of results shown, moves between result pages, clicks, ranking, display and selection of popular terms and suggestions, what is shown and done when there are no results, placement, device type, comparison-test group, timestamps, etc.)</td></tr>
       <tr><th>Name of recipient</th><td>Bernal, Inc.</td></tr>
-      <tr><th>Purpose of transmission</th><td>To provide the Service (search functionality), to improve search accuracy, and to produce usage reports for clients</td></tr>
+      <tr><th>Purpose of transmission</th><td>To provide the Service (search functionality), to improve search accuracy, to produce usage reports for clients, and to run comparison tests of search features</td></tr>
     </table>
     <p>
       We do not link the information transmitted to anything beyond what is described in Section 3.
@@ -152,7 +155,7 @@
       Except where required by law, we do not disclose the information we collect to any third party.
     </p>
     <p>
-      However, we entrust the processing behind article suggestions for searches that return no results (topic identification and the conversation) to an AI provider based in the United States. We send them only the search terms that returned no results, the text a user enters in the conversation, and the titles, opening lines and categories of the client's articles that are candidates for suggestion. We do not send the anonymous ID, session ID, IP address, page URL or member ID.
+      However, we entrust the processing behind article suggestions for searches that return no results (topic identification and the conversation) to an AI provider based in the United States. We send them only the search terms that returned no results, the text a user enters in the conversation, and the titles, opening lines and categories of the client's articles that are candidates for suggestion. We do not send the anonymous ID, session ID, IP address, page URL or member ID. Our contract with this provider prohibits any use beyond the entrusted purpose, including use for training AI models.
     </p>
     <p>
       We do use an external vendor for the development and maintenance of the systems behind the Service; the safeguards covering that arrangement are set out in Section 10, under "Technical safeguards."
@@ -173,16 +176,21 @@
     <table class="policy">
       <tr><th>Organisational safeguards</th><td>We have established a policy for handling data (this Policy), and have put in place in advance a reporting and escalation process for when a data breach occurs or is suspected.</td></tr>
       <tr><th>Personnel safeguards</th><td>Access to data is limited to those who need it for their work. As our team grows, any expansion of who may access data happens only after we have agreed confidentiality undertakings with, and provided data-handling training to, the individuals concerned.</td></tr>
-      <tr><th>Physical safeguards</th><td>Data relating to the Service is managed in data centres operated by a domestic (Japanese) cloud provider, and we also control access to the work devices we use, to prevent unauthorised viewing by third parties.</td></tr>
+      <tr><th>Physical safeguards</th><td>Data relating to the Service is managed in data centres in Japan (Tokyo) provided by cloud providers, and we also control access to the work devices we use, to prevent unauthorised viewing by third parties.</td></tr>
       <tr><th>Technical safeguards</th><td>Data is encrypted both at rest and in transit, and we apply access controls such as IDs and passwords, together with measures to prevent unauthorised access. Where we sub-contract the development or maintenance of our systems, we enter into an agreement with the vendor imposing confidentiality obligations and prohibiting use beyond the agreed purpose, and we structure the work so the vendor has no direct access to production data.</td></tr>
     </table>
 
-    <h2>11. Changes to this Policy</h2>
+    <h2>11. Requests for disclosure, deletion and similar</h2>
+    <p>
+      Information collected through the Service is recorded under an anonymous ID that contains no name, email address or similar details, so we are normally unable to identify a particular person's information. For requests concerning disclosure, correction, suspension of use or deletion, please contact the company that has installed the Service on its website, or reach us via our <a href="contact.html">Contact page</a>.
+    </p>
+
+    <h2>12. Changes to this Policy</h2>
     <p>
       This Policy may be changed without notice, to reflect changes in the law or other circumstances. Any change takes effect from the moment it is published on this page.
     </p>
 
-    <h2>12. Enquiries</h2>
+    <h2>13. Enquiries</h2>
     <p>For enquiries about this Policy, please contact us via our <a href="contact.html">Contact page</a>.</p>
 
   </div>
