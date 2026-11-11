@@ -74,7 +74,7 @@
 <main>
   <div class="wrap">
     <h1>Policy on the Handling of User Information in the Bernal Search Service</h1>
-    <p class="meta">Last updated: October 2026</p>
+    <p class="meta">Last updated: November 2026</p>
 
     <p>
       Bernal, Inc. (the "Company") sets out this Policy on the Handling of User Information in the Bernal Search Service (this "Policy"), describing how we handle user information in connection with "Bernal" (the "Service"), the search intelligence we provide.
@@ -89,7 +89,10 @@
 
     <h2>2. Overview of the Service</h2>
     <p>
-      The Service is a search engine installed via an embedded tag on a publisher's (client's) website. We operate the Service on the client's instruction, and information arising from its use is, as a rule, processed self-containedly within our own systems (we do not re-share or sub-contract it to any third party).
+      The Service is a search engine installed via an embedded tag on a publisher's (client's) website. We operate the Service on the client's instruction, and information arising from its use is, as a rule, processed self-containedly within our own systems (we do not re-share it with any third party).
+    </p>
+    <p>
+      However, when a search returns no results, the search terms are sent to the AI provider named in Section 8 and processed there, so that we can suggest related articles (by identifying the topic and through a short conversation). If the user replies in that conversation, the conversation is sent as well.
     </p>
 
     <h2>3. Information we collect</h2>
@@ -100,6 +103,7 @@
       <tr><th>Session ID</th><td>A randomly generated identifier stored in the browser's sessionStorage (cleared when the tab is closed)</td></tr>
       <tr><th>Page URL</th><td>The URL of the page on which the search box is installed</td></tr>
       <tr><th>Usage event data</th><td>Search executions, the number of results shown, articles clicked and their position, display of and clicks on related articles, and timestamps</td></tr>
+      <tr><th>Conversation content</th><td>In the conversation shown when a search returns no results, the text a user enters and the Service's replies. This is processed only to produce the replies and is not stored in our database</td></tr>
     </table>
     <p>
       IP address and browser information (User-Agent) reach our servers as an inherent feature of how data is transmitted over the internet, but are not stored in our database.
@@ -119,6 +123,7 @@
       <li>To provide the Service (search functionality)</li>
       <li>To improve search accuracy</li>
       <li>To produce usage reports for clients (such as popular keywords and click-through rates)</li>
+      <li>To suggest related articles to users whose search returned no results</li>
     </ol>
     <p>We do not use this information beyond the purposes above.</p>
 
@@ -144,7 +149,10 @@
 
     <h2>8. Disclosure to third parties</h2>
     <p>
-      Except where required by law, we do not disclose the information we collect to any third party. Nor do we sub-contract any part of the Service's operation (we use no sub-processors).
+      Except where required by law, we do not disclose the information we collect to any third party.
+    </p>
+    <p>
+      However, we entrust the processing behind article suggestions for searches that return no results (topic identification and the conversation) to Anthropic, PBC (United States), an AI provider. We send them only the search terms that returned no results, the text a user enters in the conversation, and the titles, opening lines and categories of the client's articles that are candidates for suggestion. We do not send the anonymous ID, session ID, IP address, page URL or member ID.
     </p>
     <p>
       We do use an external vendor for the development and maintenance of the systems behind the Service; the safeguards covering that arrangement are set out in Section 10, under "Technical safeguards."
