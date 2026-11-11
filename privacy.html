@@ -101,6 +101,7 @@
       <tr><th>Search terms</th><td>Words or phrases a user enters into the Service's search box</td></tr>
       <tr><th>Anonymous ID</th><td>A randomly generated identifier stored in the browser's localStorage (contains no name, membership details or other identifying information)</td></tr>
       <tr><th>Session ID</th><td>A randomly generated identifier stored in the browser's sessionStorage (cleared when the tab is closed)</td></tr>
+      <tr><th>Per-search ID</th><td>A random identifier generated in the browser each time a search is run (used to link the results shown, page moves, clicks and similar events of the same search; not stored in the browser)</td></tr>
       <tr><th>Page URL</th><td>The URL of the page on which the search box is installed</td></tr>
       <tr><th>Usage event data</th><td>Page views; display of, focus on and typing into the search box; search executions; the number of results shown and moves between result pages; articles clicked and their position; display and selection of popular search terms and suggestions; what is shown and done when a search returns no results; clicks on guide links; display of and clicks on related articles; where the search box is placed; device type (mobile, tablet or desktop only); the group assigned in comparison tests of search features; and timestamps</td></tr>
       <tr><th>Membership category</th><td>Only where provided by the client: whether the user is a paying member, a free member or not logged in (no member ID, name or similar information)</td></tr>
@@ -110,7 +111,7 @@
       IP address and browser information (User-Agent) reach our servers as an inherent feature of how data is transmitted over the internet. Of these, the only thing we store in our search logs is the device type derived from the browser information (mobile, tablet or desktop); we do not store the browser information itself. We do not store IP addresses in our search logs. To limit traffic and prevent unauthorised access, we may temporarily hold a value derived from the IP address.
     </p>
     <p>
-      The anonymous ID and session ID above are both randomly generated identifiers. We do not link them to a name, email address or any other information capable of identifying an individual.
+      The anonymous ID, session ID and per-search ID above are all randomly generated identifiers. We do not link them to a name, email address or any other information capable of identifying an individual.
     </p>
     <p>
       Our system is technically capable of linking search logs to a client's own member IDs, but we do not currently use this capability to store data in that way. Should a client implement this in future, this would no longer apply, and we would notify the client concerned individually.
@@ -135,7 +136,7 @@
       When a user views or interacts with a page on which the Service's tag is installed, the following information is sent to our servers (the recipient).
     </p>
     <table class="policy">
-      <tr><th>Information transmitted</th><td>Search terms, anonymous ID, session ID, page URL, membership category (only where provided by the client), usage event data (page views, display of/focus on/typing into the search box, search executions, number of results shown, moves between result pages, clicks, ranking, display and selection of popular terms and suggestions, what is shown and done when there are no results, placement, device type, comparison-test group, timestamps, etc.)</td></tr>
+      <tr><th>Information transmitted</th><td>Search terms, anonymous ID, session ID, per-search ID, page URL, membership category (only where provided by the client), usage event data (page views, display of/focus on/typing into the search box, search executions, number of results shown, moves between result pages, clicks, ranking, display and selection of popular terms and suggestions, what is shown and done when there are no results, placement, device type, comparison-test group, timestamps, etc.)</td></tr>
       <tr><th>Name of recipient</th><td>Bernal, Inc.</td></tr>
       <tr><th>Purpose of transmission</th><td>To provide the Service (search functionality), to improve search accuracy, to produce usage reports for clients, and to run comparison tests of search features</td></tr>
     </table>
