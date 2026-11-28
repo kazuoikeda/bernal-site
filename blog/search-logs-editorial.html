@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<script>
+(function(){
+  try {
+    var pref = localStorage.getItem('bernal_lang');
+    var dest = '/jp/blog/search-logs-editorial.html' + location.search + location.hash;
+    if (pref === 'ja') { location.replace(dest); return; }
+    if (pref !== 'en') {
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.indexOf('ja') === 0) { location.replace(dest); }
+    }
+  } catch (e) {}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your search box is the most honest reader feedback your newsroom gets | Bernal</title>
+<link rel="canonical" href="https://bernal-inc.com/blog/search-logs-editorial.html">
+<meta name="description" content="Surveys and pageviews miss something your search box captures: what readers came looking for, in their own words. Three ways to read a search log for editorial planning.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bernal">
+<meta property="og:title" content="Your search box is the most honest reader feedback your newsroom gets | Bernal">
+<meta property="og:description" content="Surveys and pageviews miss something your search box captures: what readers came looking for, in their own words. Three ways to read a search log for editorial planning.">
+<meta property="og:url" content="https://bernal-inc.com/blog/search-logs-editorial.html">
+<meta property="og:image" content="https://bernal-inc.com/assets/og-en.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your search box is the most honest reader feedback your newsroom gets | Bernal">
+<meta name="twitter:description" content="Surveys and pageviews miss something your search box captures: what readers came looking for, in their own words. Three ways to read a search log for editorial planning.">
+<meta name="twitter:image" content="https://bernal-inc.com/assets/og-en.png?v=2">
+<link rel="alternate" hreflang="en" href="https://bernal-inc.com/blog/search-logs-editorial.html">
+<link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/blog/search-logs-editorial.html">
+<link rel="stylesheet" href="/style.css?v=20261128">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg style="height:30px;" xmlns="http://www.w3.org/2000/svg" viewBox="33.0 16.5 313.7 84.5" role="img" aria-label="Bernal"><g><path d="M38,24 V96" fill="none" stroke="#14213D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M38,58 H60 A19,19 0 0 1 60,96 H38" fill="none" stroke="#14213D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M38,58 H56 A17,17 0 0 0 72.7,38.0" fill="none" stroke="#14213D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M38,24 H56 A17,17 0 0 1 66.9,28.0" fill="none" stroke="#14213D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="56" cy="41" r="5.5" fill="#14213D"/><circle cx="84.6" cy="24.5" r="7" fill="#1F8A87"/></g><g transform="translate(120.0 85.7)"><path d="M6.370000000000001 0.0H24.85C36.260000000000005 0.0 44.870000000000005 -4.83 44.870000000000005 -15.260000000000002C44.870000000000005 -22.19 40.81 -26.180000000000003 35.21 -27.51V-27.790000000000003C39.620000000000005 -29.400000000000002 42.28 -34.230000000000004 42.28 -39.06C42.28 -48.720000000000006 34.160000000000004 -51.870000000000005 23.520000000000003 -51.870000000000005H6.370000000000001ZM16.73 -30.730000000000004V-43.89000000000001H22.89C29.120000000000005 -43.89000000000001 32.2 -42.07000000000001 32.2 -37.52C32.2 -33.39 29.400000000000002 -30.730000000000004 22.820000000000004 -30.730000000000004ZM16.73 -7.98V-23.1H23.94C31.080000000000002 -23.1 34.790000000000006 -20.930000000000003 34.790000000000006 -15.890000000000002C34.790000000000006 -10.500000000000002 30.94 -7.98 23.94 -7.98Z M70.28 0.9800000000000001C75.11 0.9800000000000001 80.08000000000001 -0.7000000000000001 83.93 -3.3600000000000003L80.43 -9.66C77.56 -7.910000000000001 74.83000000000001 -7.000000000000001 71.68 -7.000000000000001C65.80000000000001 -7.000000000000001 61.6 -10.290000000000001 60.760000000000005 -16.66H84.91C85.19 -17.64 85.4 -19.53 85.4 -21.42C85.4 -32.34 79.80000000000001 -40.18000000000001 69.02000000000001 -40.18000000000001C59.71 -40.18000000000001 50.75 -32.27 50.75 -19.6C50.75 -6.65 59.290000000000006 0.9800000000000001 70.28 0.9800000000000001ZM60.550000000000004 -23.590000000000003C61.39 -29.26 65.03 -32.2 69.16 -32.2C74.27000000000001 -32.2 76.58000000000001 -28.840000000000003 76.58000000000001 -23.590000000000003Z M93.87 0.0H104.16000000000001V-23.380000000000003C106.4 -29.050000000000004 110.04 -31.080000000000002 113.05000000000001 -31.080000000000002C114.73 -31.080000000000002 115.85000000000001 -30.870000000000005 117.25 -30.450000000000003L118.93 -39.34C117.81 -39.830000000000005 116.55000000000001 -40.18000000000001 114.38000000000001 -40.18000000000001C110.32000000000001 -40.18000000000001 106.12 -37.38 103.25 -32.27H103.04L102.27000000000001 -39.2H93.87Z M124.39000000000001 0.0H134.68V-26.950000000000003C137.55 -29.820000000000004 139.65 -31.360000000000003 142.8 -31.360000000000003C146.65 -31.360000000000003 148.33 -29.26 148.33 -23.17V0.0H158.62V-24.430000000000003C158.62 -34.300000000000004 154.98000000000002 -40.18000000000001 146.51000000000002 -40.18000000000001C141.19000000000003 -40.18000000000001 137.20000000000002 -37.38 133.77 -34.02H133.56L132.79000000000002 -39.2H124.39000000000001Z M178.85000000000002 0.9800000000000001C183.40000000000003 0.9800000000000001 187.32000000000002 -1.1900000000000002 190.68 -4.2H191.03000000000003L191.73000000000002 0.0H200.13000000000002V-22.89C200.13000000000002 -34.230000000000004 195.02 -40.18000000000001 185.08 -40.18000000000001C178.92000000000002 -40.18000000000001 173.32000000000002 -37.800000000000004 168.77 -35.0L172.41000000000003 -28.140000000000004C176.05 -30.310000000000002 179.55 -31.92 183.19000000000003 -31.92C188.02 -31.92 189.70000000000002 -28.980000000000004 189.84000000000003 -25.130000000000003C174.09000000000003 -23.450000000000003 167.3 -19.040000000000003 167.3 -10.71C167.3 -3.99 171.85000000000002 0.9800000000000001 178.85000000000002 0.9800000000000001ZM182.28000000000003 -7.07C179.27 -7.07 177.10000000000002 -8.4 177.10000000000002 -11.48C177.10000000000002 -15.05 180.25000000000003 -17.64 189.84000000000003 -18.76V-10.920000000000002C187.39000000000001 -8.47 185.22000000000003 -7.07 182.28000000000003 -7.07Z M220.36 0.9800000000000001C222.74 0.9800000000000001 224.42000000000002 0.56 225.61 0.07L224.35000000000002 -7.5600000000000005C223.65000000000003 -7.420000000000001 223.37000000000003 -7.420000000000001 222.95000000000002 -7.420000000000001C221.97000000000003 -7.420000000000001 220.92000000000002 -8.190000000000001 220.92000000000002 -10.57V-55.86000000000001H210.63000000000002V-10.99C210.63000000000002 -3.7100000000000004 213.15000000000003 0.9800000000000001 220.36 0.9800000000000001Z" fill="#14213D"/></g></svg>
+    </a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="site" id="site-nav">
+      <a href="/index.html#problem">The Problem</a>
+      <a href="/index.html#compare">How it works</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/index.html#vision">Our view</a>
+      <details class="lang-menu">
+        <summary aria-label="Choose language"><svg class="globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.800 2.600 4.200 5.600 4.200 9s-1.400 6.400-4.200 9c-2.800-2.600-4.200-5.600-4.200-9S9.200 5.600 12 3z"/></svg><span>English</span><svg class="chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="lang-list">
+          <li><a href="/jp/blog/search-logs-editorial.html" lang="ja" onclick="try{localStorage.setItem('bernal_lang','ja')}catch(e){}">Japanese</a></li>
+          <li><a href="/blog/search-logs-editorial.html" lang="en" onclick="try{localStorage.setItem('bernal_lang','en')}catch(e){}" aria-current="true" class="is-current">English</a></li>
+        </ul>
+      </details>
+      <a class="nav-cta" href="/contact.html">Talk to us</a>
+    </nav>
+  </div>
+  <script>
+  (function(){
+    var h=document.querySelector('header.site'),b=document.getElementById('menu-toggle');
+    if(!h||!b)return;
+    document.documentElement.classList.add('js');
+    b.addEventListener('click',function(){
+      var o=h.classList.toggle('menu-open');
+      b.setAttribute('aria-expanded',o?'true':'false');
+    });
+    h.querySelectorAll('nav.site a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');});});
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&h.classList.contains('menu-open')){h.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.focus();}
+    });
+  })();
+  </script>
+  <script>
+  (function(){
+    var d=document.querySelector('details.lang-menu');
+    if(!d)return;
+    document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});
+  })();
+  </script>
+</header>
+
+<main>
+  <article class="wrap post">
+    <p class="post-back"><a href="/blog/">← All posts</a></p>
+    <h1>Your search box is the most honest reader feedback your newsroom gets</h1>
+    <p class="post-meta"><time datetime="2026-11-28">28 November 2026</time><span aria-hidden="true"> · </span>By Kazuo Ikeda, founder of Bernal</p>
+    <div class="post-body">
+      <p>Newsrooms have plenty of ways to hear from readers. Surveys tell you what readers say they want. Pageviews and engagement data tell you how the stories you put in front of them performed.</p>
+      <p>Both are useful, and both have a blind spot. A survey only captures what readers think to tell you. Pageviews only measure stories that already exist.</p>
+      <p>There is one place where readers tell you, in their own words, what they came looking for: the search box on your own site.</p>
+      <h2>What a search log actually contains</h2>
+      <p>Every query typed into your site's search box is a small, unprompted request. Nobody asked the reader a question. They came with something in mind and wrote it down.</p>
+      <p>When we read the search logs of subscription news sites, we keep finding three kinds of material that belong in the next editorial planning meeting.</p>
+      <h2>1. Zero-result searches: stories nobody has written yet</h2>
+      <p>A search that returns nothing is usually treated as a search problem to fix. Some of them are: a spelling variant, a nickname, a missing synonym. Those we fix in the search itself.</p>
+      <p>But many zero-result searches aren't search failures at all. The reader looked for a topic, and the site simply has no story on it. That's not an error. <strong>It's a reader placing an order.</strong></p>
+      <p>Read one by one, these queries become a list of topics your readers wanted and couldn't find. Some are worth a story. Some tell you where a competitor or a social feed is serving readers better than you are.</p>
+      <h2>2. Rising searches: where interest is moving right now</h2>
+      <p>Searches that suddenly grow from one week to the next show where reader attention is heading, often before it shows up in your traffic charts.</p>
+      <p>One caution from experience: count <strong>people</strong>, not searches. A single reader searching the same term twenty times isn't a trend. And look at whether readers typed the term themselves or tapped a suggestion you showed them. If you suggested it, rising numbers may just be your own suggestion echoing back.</p>
+      <h2>3. Old stories found through search: what has a long shelf life</h2>
+      <p>Search is where readers dig into the archive. Looking at which older stories get opened from search shows you which series, beats and writers keep being sought out long after publication.</p>
+      <p>That is useful for planning follow-ups, for deciding what to link from new stories, and for knowing which parts of your archive are actually worth something to subscribers.</p>
+      <h2>Why this matters more for subscription publishers</h2>
+      <p>For a subscription business, the reader who searches is usually someone who already cares enough to come looking. What they look for, and whether they find it, says a lot about whether your site is worth paying for.</p>
+      <p>A search log won't replace editorial judgment. It's raw material for it. The work is in reading it carefully: separating what search should fix from what the newsroom should write, and telling a real shift from noise.</p>
+      <h2>How we use it</h2>
+      <p>At Bernal, we read these logs one by one. What can be fixed in search goes into search. What is missing goes to the editors, as input for the next planning meeting.</p>
+      <hr class="post-rule">
+      <p>Does your search log ever make it into the room where you decide what to publish next?</p>
+      <p>Bernal is on-site search built for subscription news publishers. Start by showing us your search logs. We'll tell you what we see in them.</p>
+    </div>
+    <p class="post-cta"><a class="btn btn-primary" href="/contact.html">Contact us</a></p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="legal">&copy; 2026 Bernal, Inc. All rights reserved.</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/blog/">Blog</a>
+      <a href="/careers.html">Careers</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<div id="cookie-consent-banner" class="cookie-consent" style="display:none;">
+  <div class="wrap">
+    <p>This site uses Google Analytics to understand site usage and improve the experience. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
+      <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA_ID = 'G-4TDLBKZMTG';
+  function loadGA(){
+    if (window.__bernalGALoaded) return;
+    window.__bernalGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  function showBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'flex';
+  }
+  function hideBanner(){
+    var b = document.getElementById('cookie-consent-banner');
+    if (b) b.style.display = 'none';
+  }
+  var consent;
+  try { consent = localStorage.getItem('bernal_cookie_consent'); } catch(e) { consent = null; }
+  if (consent === 'granted') {
+    loadGA();
+  } else if (consent !== 'denied') {
+    showBanner();
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'granted'); } catch(e){}
+    loadGA();
+    hideBanner();
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bernal_cookie_consent', 'denied'); } catch(e){}
+    hideBanner();
+  });
+})();
+</script>
+</body>
+</html>
