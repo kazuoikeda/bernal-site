@@ -50,4 +50,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/terms.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/terms.html"/>
   </url>
+  <url>
+    <loc>https://bernal-inc.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/blog/"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/blog/"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/blog/search-logs-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/blog/search-logs-editorial.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/blog/search-logs-editorial.html"/>
+  </url>
+  <url>
+    <loc>https://bernal-inc.com/jp/blog/search-logs-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bernal-inc.com/blog/search-logs-editorial.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bernal-inc.com/jp/blog/search-logs-editorial.html"/>
+  </url>
 </urlset>

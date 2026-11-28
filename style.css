@@ -1072,3 +1072,26 @@ header.site { padding: 16px 0; }
 @media (prefers-reduced-motion: reduce) {
   .demo-search.is-ready .demo-go { animation: none; background: var(--accent-text); color: #fff; box-shadow: 0 0 0 4px rgba(31, 138, 135, 0.45); }
 }
+
+/* Blog: /blog/ and /jp/blog/ */
+.post, .post-index { max-width: 760px; padding-top: 48px; }
+.post-back { margin: 0 0 24px; font-size: 14px; }
+.post-meta { margin: 0 0 32px; font-size: 14px; color: var(--muted); }
+.post-body h2 { margin: 40px 0 14px; font-size: 21px; line-height: 1.5; }
+.post-body p { font-size: 16px; line-height: 1.9; margin-bottom: 18px; }
+.post-body strong { color: var(--ink); }
+.post-rule { border: none; border-top: 1px solid var(--border); margin: 40px 0 28px; }
+.post-cta { margin-top: 28px; }
+.post-index .lede { margin-bottom: 36px; }
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li { padding: 28px 0; border-top: 1px solid var(--border); }
+.post-list li:last-child { border-bottom: 1px solid var(--border); }
+.post-list .post-meta { margin-bottom: 8px; }
+.post-list h2 { font-size: 21px; line-height: 1.5; margin: 0 0 10px; }
+.post-list h2 a { border-bottom: none; }
+.post-list h2 a:hover { color: var(--accent-text); }
+@media (max-width: 720px) {
+  .post, .post-index { padding-top: 32px; }
+  .post h1, .post-index h1 { font-size: 24px; }
+  .post-body h2, .post-list h2 { font-size: 19px; }
+}
